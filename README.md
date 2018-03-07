@@ -5,6 +5,7 @@ The lastest version of this document is available on [Github > HTMLElementExtens
 
 # HTMLElement
     - addClass
+    - attr
     - removeClass
     - toggleClass
     - css
@@ -18,6 +19,21 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - html
     - offset
     - on
+    - off
+    - outerHtml
+    - outerWidth
+    - outerHeight
+    - text
+    - before
+    - after
+    - append
+    - prepend
+    - 
 
 # HTMLTextareaElement
     - insertAtCaret
+
+# document
+    - ready
+    - getJSON
+    - ajax

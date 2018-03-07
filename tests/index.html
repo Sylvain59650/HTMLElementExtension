@@ -1,8 +1,7 @@
 <html>
 
 <head>
-  <script src="../src/HTMLElement.js"></script>
-  <script src="../src/HTMLTextareaElement.js"></script>
+  <script src="../distrib/htmlElement.min.js"></script>
   <style>
     #t1 {
       font-size: 10pt
@@ -62,9 +61,27 @@
       t1.on(eventName, fn);
     }
 
+    function h_outerHtml(id) {
+      var t1 = document.querySelector(id);
+      console.log(t1.outerHtml());
+    }
+
     function clickOnMe(evt) {
       alert(evt);
     }
+
+    function loadJson() {
+      document.getJSON("./data.json", function(data) {
+        var target = document.querySelector("#json");
+        target.html(data);
+        console.log(data[0]);
+      });
+    }
+  </script>
+
+  <script>
+    document.ready(clickOnMe);
+    loadJson();
   </script>
 
   <div>mon texte</div>
@@ -96,6 +113,11 @@
     <hr/>
     <button type="button" id="t4">Ok</textarea>
     <button type="button" onclick="h_event('#t4','onclick',clickOnMe)">click</button>
+    <button type="button" onclick="h_outerHtml('#t4')">outerHTML</button>
+
+    <div id="json">
+
+    </div>
 </body>
 
 </html>

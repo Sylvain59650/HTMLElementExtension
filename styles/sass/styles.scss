@@ -1,0 +1,72 @@
+$couleur-surlignage: #ffa;
+@mixin texte-surligne-gras {
+  font-weight: bold;
+  background-color: $couleur-surlignage;
+}
+
+.resultat-surligne {
+  span {
+    @include texte-surligne-gras;
+  }
+  div {
+    font-size: 12pt;
+    @include texte-surligne-gras;
+  }
+}
+
+@mixin clearfix {
+  // Pour les navigateurs modernes
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  // Pour IE 6/7 (trigger hasLayout)
+  & {
+    zoom: 1;
+  }
+}
+
+.group {
+  @include clearfix;
+}
+
+$column-width: 60px; // 12 colonnes = 720px 
+$gutter-width: 20px; // 11 gouttières = 220px
+@mixin grid-unit($span) {
+  float: left;
+  margin-right: $gutter-width;
+  width: ($column-width * $span) + ($gutter-width * ($span - 1));
+}
+
+.container {
+  @include clearfix;
+  @include grid-unit(12);
+  float: none;
+  margin: 0 auto;
+}
+
+.main-content {
+  @include grid-unit(8);
+}
+
+.sidebar {
+  @include grid-unit(4);
+  margin-right: 0;
+}
+
+.container {
+  width: percentage(940px/960px);
+}
+
+$base-link-color:#00f;
+a {
+  color: $base-link-color;
+}
+
+a:visited {
+  color: darken($base-link-color, 20%)
+}

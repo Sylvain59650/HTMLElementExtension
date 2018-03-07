@@ -34,16 +34,40 @@ HTMLElement.prototype.css = function(cssProperty, cssValue) {
 }
 
 HTMLElement.prototype.appendTo = function(html) {
+  if (typeof html !== "string") {
+    console.error("appendTo:", html, " is not a string");
+  }
   this.insertAdjacentHTML("beforeend", html);
   return this;
 }
 
-HTMLElement.prototype.outerHeight = function() {
-  return (this.parentElement) ? this.parentElement.clientHeight : 0;
+HTMLElement.prototype.before = function(html) { this.insertAdjacentHTML('beforebegin', html); }
+HTMLElement.prototype.after = function(html) { this.insertAdjacentHTML('afterend', html); }
+HTMLElement.prototype.append = function(elem) { this.parent.appendChild(elem); }
+HTMLElement.prototype.prepend = function(elem) { this.parent.insertBefore(elem, this.parent.firstChild); }
+
+HTMLElement.prototype.outerHeight = function(withMargin) {
+  //return (this.parentElement) ? this.parentElement.clientHeight : 0;
+  if (withMargin) {
+    var height = this.offsetHeight;
+    var style = getComputedStyle(this);
+    height += parseInt(style.marginTop) + parseInt(style.marginBottom);
+    return height;
+  } else {
+    return this.offsetHeight;
+  }
 }
 
-HTMLElement.prototype.outerWidth = function() {
-  return (this.parentElement) ? this.parentElement.clientWidth : 0;
+HTMLElement.prototype.outerWidth = function(withMargin) {
+  if (withMargin) {
+    var width = this.offsetWidth;
+    var style = getComputedStyle(this);
+    width += parseInt(style.marginLeft) + parseInt(style.marginRight);
+    return width;
+  } else {
+    return this.offsetWidth;
+  }
+  //return (this.parentElement) ? this.parentElement.clientWidth : 0;
 }
 
 
@@ -70,10 +94,34 @@ HTMLElement.prototype.html = function(st) {
   return this;
 }
 
+HTMLElement.prototype.text = function() {
+  return this.textContent;
+}
+
+HTMLElement.prototype.outerHtml = function(st) {
+  if (arguments.length === 1) {
+    this.outerHTML = st;
+  } else {
+    return this.outerHTML;
+  }
+}
+
+HTMLElement.prototype.attr = function(name, value) {
+  if (arguments.length === 2) {
+    this.setAttribute(name, value);
+  } else {
+    return this.getAttribute(name);
+  }
+}
 
 
 HTMLElement.prototype.offset = function() {
-  return { top: this.offsetLeft, left: this.offsetTop };
+  //return { top: this.offsetLeft, left: this.offsetTop };
+  var rect = this.getBoundingClientRect();
+  return {
+    top: rect.top + document.body.scrollTop,
+    left: rect.left + document.body.scrollLeft
+  };
 }
 
 HTMLElement.prototype.on = function(evtName, fn, useCapture) {
@@ -83,4 +131,9 @@ HTMLElement.prototype.on = function(evtName, fn, useCapture) {
   } else if (this.attachEvent) {
     this.attachEvent(evtName, fn);
   }
+}
+
+
+HTMLElement.prototype.off = function(eventName, eventHandler) {
+  this.removeEventListener(eventName, eventHandler);
 }
