@@ -1,5 +1,5 @@
 HTMLTextAreaElement.prototype.insertAtCaret = function(text) {
-  text = text || '';
+  text = text || "";
   if (document.selection) {
     // IE
     this.focus();
@@ -17,4 +17,18 @@ HTMLTextAreaElement.prototype.insertAtCaret = function(text) {
   } else {
     this.value += text;
   }
-};
+}
+
+
+// HTMLTextAreaElement.prototype.ml = function(nb) {
+//   if (arguments.length === 0) {
+//     return this.attr("maxlength");
+//   }
+//   this.attr("maxlength", nb);
+//   let self = this;
+//   this.on("keyup", function() {
+//     if (self.value.length > nb) {
+//       self.value = self.value.slice(0, nb);
+//     }
+//   });
+// }

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <script src="../distrib/htmlElement.min.js"></script>
+</head>
+
+<body>
+  <form id="f1">
+    <input type="text" name="t1" />
+    <input type="text" name="t2" />
+    <select name="t3"><option value=1>1</option><option value=2>2</option></select>
+    <input type="radio" name="t4" value="1" />
+    <input type="radio" name="t4" value="2" />
+    <input type="radio" name="t4" value="3" />
+    <input type="checkbox" name="t5" value="5" />
+    <input type="checkbox" name="t6" value="6" />
+    <input type="password" name="t7" value="7" />
+    <button type="button" onclick="ser2()">ok</button>
+
+  </form>
+  <script>
+    function ser2() {
+      var f1 = qs("#f1");
+      console.log(f1.val());
+    }
+
+    function ser() {
+      debugger;
+      var f1 = qs("#f1");
+      var dictionary = {};
+      var formdata = new FormData(f1);
+      var done = false;
+      var iterator = formdata.entries();
+      do {
+        var prop = iterator.next();
+        if (prop.done && !prop.value) {
+          done = true;
+        } else {
+          dictionary[prop.value[0]] = prop.value[1];
+        }
+
+      } while (!done);
+      console.log(dictionary);
+    }
+  </script>
+</body>
+
+</html>

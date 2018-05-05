@@ -77,11 +77,33 @@
         console.log(data[0]);
       });
     }
+
+    function h_newElement() {
+      var elem = newElement("span", {
+        class: "titi",
+        width: 100
+      }, "<h1>coucou</h1>");
+      document.body.insertAdjacentElement("beforeend", elem);
+    }
+
+    function al() {
+      alert("toto");
+    }
+
+    function h_attachEvent(id, event, fn) {
+      var elem = document.querySelector(id);
+      elem.on(event, fn);
+    }
+
+    function h_detachEvent(id, event, fn) {
+      var elem = document.querySelector(id);
+      elem.off(event, fn);
+    }
   </script>
 
   <script>
     document.ready(clickOnMe);
-    loadJson();
+    //loadJson();
   </script>
 
   <div>mon texte</div>
@@ -118,6 +140,23 @@
     <div id="json">
 
     </div>
+
+    <button type="button" onclick="h_newElement()">newElement</button>
+
+    <button type="button" id="not">nothing</button>
+    <button type="button" onclick="h_attachEvent('#not','click',al)">attachEvent</button>
+    <button type="button" onclick="h_detachEvent('#not','click',al)">attachEvent</button>
+
+
+    <script>
+      document.querySelector("#t1").shortcut("shift+ctrl+E", function() {
+        alert("ok")
+      }, false);
+
+
+
+      console.log(encodeShortcut("ctrl+shift+F1"));
+    </script>
 </body>
 
 </html>

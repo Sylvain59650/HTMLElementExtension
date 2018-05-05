@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <script src="../distrib/htmlElement.min.js"></script>
+</head>
+
+<body>
+
+  <script>
+    var t1 = newElement("input", {
+      type: "text",
+      maxlength: 2
+    }, "", {
+      click: function() {
+        alert("focus")
+      }
+    });
+
+    var t2 = newElement("input", {
+      type: "text",
+      maxlength: 2
+    }, "");
+
+    qs("body").afterBegin(t1);
+    qs("body").afterBegin(t2);
+  </script>
+</body>
+
+</html>
