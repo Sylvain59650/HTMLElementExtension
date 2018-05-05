@@ -1,7 +1,7 @@
 {
   "name": "htmlelement-extension",
   "version": "0.8.2",
-  "description": "Add functionalities to HTMLElement, HTMLTextareaElement, document",
+  "description": "Add functionalities to HTMLElement, HTMLTextareaElement, HTMLFormElement, document, window",
   "main": "distrib/htmlElement.min.js",
   "directories": {
     "doc": "docs"
@@ -16,8 +16,10 @@
   "keywords": [
     "HTML",
     "HTMLElement",
+    "extensions",
     "HTMLTextareaElement",
-    "document"
+    "HTMLFormElement",
+    "document","window"
   ],
   "author": "Sylvain LONGEPEE",
   "license": "MIT",
