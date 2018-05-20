@@ -1,4 +1,4 @@
-function newElement(tagName, attributes, htmlContent, events) {
+window.newElement = function(tagName, attributes, htmlContent, events) {
   var tag = document.createElement(tagName);
   if (attributes) {
     tag.attrs(attributes);
@@ -16,10 +16,14 @@ function newElement(tagName, attributes, htmlContent, events) {
   return tag;
 }
 
-function qs(id) {
+window.qs = function(id) {
   return document.querySelector(id);
 }
 
-function qsa(selectors) {
+window.qsa = function(selectors) {
   return document.querySelectorAll(selectors);
+}
+
+window.qsi = function(id) {
+  return document.querySelector("#" + id);
 }

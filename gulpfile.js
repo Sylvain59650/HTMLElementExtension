@@ -26,10 +26,12 @@ gulp.task("htmlElement.min.js", () => {
       "src/**.js"
     ])
     .pipe(concat("htmlElement.min.js"))
-    // .pipe(babel({
-    //   presets: ["es2015"],
-    //   compact: false
-    // }))
+    .pipe(babel({
+      presets: ["es2017"],
+      compact: true,
+      comments: false,
+      minified: true
+    }))
     //.pipe(uglify())
     //.on('error', function(err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     // .pipe(umd())

@@ -51,7 +51,7 @@ The lastest version of this document is available on [Github > HTMLElementExtens
 
 ## HTMLFormElement
     - val
-
+    - setInputs
 
 ## document
     - ready
@@ -62,3 +62,16 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - newElement
     - qs   ~ document.querySelector
     - qsa  ~ document.querySelectorAll
+    - qsi ~ document.querySelector byId (no need #)
+
+## NodeList
+   - addClass
+    - attr
+    - removeClass
+    - toggleClass
+    - css
+    - hide
+    - show
+    - toggleVisible
+    - on
+    - off

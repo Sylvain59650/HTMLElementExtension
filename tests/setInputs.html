@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <script src="../distrib/htmlElement.min.js"></script>
+</head>
+
+<body>
+  <script>
+    document.ready(() => {
+      qs("[name='t3']").on("change", () => {
+        console.log("t3 changed");
+      });
+    });
+
+    function setIn() {
+      var obj = {
+        t1: 1,
+        t2: 2,
+        t3: 33,
+        t4: 4,
+        t5: 0,
+        t6: "pass",
+        t7: "tttt",
+        t8: 2,
+        t9: "t9",
+        t10: "another",
+        t20: "1,3,5"
+      };
+      var f1 = qs("#f1");
+      f1.setInputs(obj);
+    }
+  </script>
+  <form id="f1">
+    <input type="text" name="t1" />
+    <input type="text" name="t2" />
+    <input type="radio" name="t3" value="44" />
+    <input type="radio" name="t3" value="33" />
+    <input type="checkbox" name="t4" value="4" />
+    <input type="checkbox" name="t5" value="5" />
+    <input type="password" name="t6" />
+    <textarea name="t7"></textarea>
+    <select name="t8">
+      <option value=1>1</option>
+      <option value=2>2</option>
+    </select>
+    <input type="hidden" name="t9" />
+
+    <input type="checkbox" name="t20" value="0" />
+    <input type="checkbox" name="t20" value="1" />
+    <input type="checkbox" name="t20" value="2" />
+    <input type="checkbox" name="t20" value="3" />
+    <input type="checkbox" name="t20" value="4" />
+    <input type="checkbox" name="t20" value="5" />
+    <input type="checkbox" name="t20" value="6" />
+
+    <button type="button" onclick="setIn()">Ok</button>
+  </form>
+
+</body>
+
+</html>

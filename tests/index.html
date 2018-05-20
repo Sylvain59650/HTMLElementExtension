@@ -147,15 +147,15 @@
     <button type="button" onclick="h_attachEvent('#not','click',al)">attachEvent</button>
     <button type="button" onclick="h_detachEvent('#not','click',al)">attachEvent</button>
 
-
+    <button type="button" id="b1">b1</button>
+    <button type="button" id="b2">b2</button>
     <script>
-      document.querySelector("#t1").shortcut("shift+ctrl+E", function() {
-        alert("ok")
-      }, false);
-
-
-
-      console.log(encodeShortcut("ctrl+shift+F1"));
+      qsa("#b1,#b2").on("click", function() {
+        this.toggleClass("error");
+      });
+      qsa("#b2").on("click", function() {
+        qs("#b1").toggleVisible();
+      });
     </script>
 </body>
 
