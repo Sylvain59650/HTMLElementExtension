@@ -1,6 +1,6 @@
 {
   "name": "htmlelement-extension",
-  "version": "0.8.4",
+  "version": "0.8.5",
   "description": "Add functionalities to HTMLElement, HTMLTextareaElement, HTMLFormElement, document, window",
   "main": "distrib/htmlElement.min.js",
   "scripts": {

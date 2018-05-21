@@ -27,7 +27,7 @@ gulp.task("htmlElement.min.js", () => {
     ])
     .pipe(concat("htmlElement.min.js"))
     .pipe(babel({
-      presets: ["es2017"],
+      presets: ["es2015"],
       compact: true,
       comments: false,
       minified: true
