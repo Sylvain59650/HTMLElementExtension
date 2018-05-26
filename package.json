@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sylvain59650/HTMLElementExtension.git"
+    "url": "git+https://github.com/Sylvain59650/htmlelement-extension.git"
   },
   "keywords": [
     "HTML",
@@ -22,9 +22,9 @@
   "author": "Sylvain LONGEPEE",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Sylvain59650/HTMLElementExtension/issues"
+    "url": "https://github.com/Sylvain59650/htmlelement-extension/issues"
   },
-  "homepage": "https://github.com/Sylvain59650/HTMLElementExtension#readme",
+  "homepage": "https://github.com/Sylvain59650/htmlelement-extension#readme",
   "devDependencies": {
     "babel-core": "^6.26.2",
     "babel-plugin-remove-comments": "^2.0.0",
