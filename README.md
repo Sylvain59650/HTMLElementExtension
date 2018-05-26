@@ -1,6 +1,6 @@
  # htmlelement-extension
  
- 
+
  <div style="display:inline">
 
 [![build](https://travis-ci.org/Sylvain59650/htmlelement-extension.png?branch=master)](https://travis-ci.org/Sylvain59650/htmlelement-extension)
@@ -35,8 +35,6 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - toggleVisible
     - html
     - offset
-    - on
-    - off
     - outerHtml
     - outerWidth
     - outerHeight
@@ -47,6 +45,8 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - prepend
     - qs   ~ querySelector
     - qsa  ~ querySelectorAll
+
+ **Note Deprecated: on & off functions will be moved in the module [htmlelement-events-extension](https://www.npmjs.com/package/htmlelement-events-extension)**
 
 ## HTMLTextareaElement
     - insertAtCaret
