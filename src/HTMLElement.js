@@ -1,23 +1,33 @@
+/* global isDef */
+
 HTMLElement.prototype.addClass = function(className) {
-  this.setAttribute("class", (this.getAttribute("class") || "") + " " + className);
+  var classes = className.split(" ");
+  for (var i = 0; i < classes.length; i++) {
+    var cl = classes[i];
+    if (this.classList.contains(cl)) { continue; }
+    this.classList.add(cl);
+  }
   return this;
 }
 
 HTMLElement.prototype.removeClass = function(className) {
-  var cl = this.getAttribute("class") || "";
-  cl = cl.replace(className, "").trim();
-  this.setAttribute("class", cl);
+  var classes = className.split(" ");
+  this.classList.remove(classes);
   return this;
 }
 
 HTMLElement.prototype.toggleClass = function(className) {
-  var cl = this.getAttribute("class") || "";
-  if (cl === "") { return this.addClass(className); }
-  return this.removeClass(className);
+  var classes = className.split(" ");
+  for (var i = 0; i < classes.length; i++) {
+    var cl = classes[i];
+    if (this.classList.contains(cl)) {
+      this.classList.remove(cl);
+    } else { this.classList.add(cl); }
+  }
 }
 
 HTMLElement.prototype.hasClass = function(className) {
-  return (this.getAttribute("class") || "").indexOf(className) >= 0;
+  return this.classList.contains(className);
 }
 
 HTMLElement.prototype.css = function(cssProperty, cssValue) {
@@ -134,8 +144,18 @@ HTMLElement.prototype.attrs = function(attributes) {
   return [];
 }
 
+HTMLElement.prototype.contains = function(item) {
+  var it = item;
+  if (isDef(item)) {
+    while (it.parentNode !== null && it !== this) {
+      it = it.parentNode;
+    }
+    return (it === this);
+  }
+  return false;
+}
+
 HTMLElement.prototype.offset = function() {
-  //return { top: this.offsetLeft, left: this.offsetTop };
   var rect = this.getBoundingClientRect();
   return {
     top: rect.top + document.body.scrollTop,
@@ -149,26 +169,4 @@ HTMLElement.prototype.qs = function(selector) {
 
 HTMLElement.prototype.qsa = function(selector) {
   return this.querySelectorAll(selector);
-}
-
-
-HTMLElement.prototype.on = function(evtName, fn, useCapture) {
-  if (this.addEventListener) {
-    // if (this["on" + evtName] !== undefined) {
-    //   this["on" + evtName] = fn;
-    // } else
-    this.addEventListener(evtName, fn, useCapture || false);
-    //this[evtName] = fn;
-  } else if (this.attachEvent) {
-    this.attachEvent("on" + evtName, fn);
-  }
-}
-
-
-HTMLElement.prototype.off = function(eventName, eventHandler) {
-  if (this.removeEventListener) {
-    this.removeEventListener(eventName, eventHandler, false)
-  } else if (this.detachEvent) {
-    this.detachEvent("on" + eventName, eventHandler)
-  }
 }

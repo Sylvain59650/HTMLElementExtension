@@ -28,10 +28,3 @@ NodeList.prototype.css = function(cssProperty, cssValue) {
 NodeList.prototype.show = function(visible) {
   this.forEach((it) => it.show(visible));
 }
-
-NodeList.prototype.attrs = function(attributes) {
-  this.forEach((it) => it.attrs(attributes));
-}
-NodeList.prototype.on = function(evtNames, fn, option) {
-  this.forEach((it) => it.on(evtNames, fn, option));
-}

@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <script src="../distrib/htmlElement.min.js"></script>
+</head>
+
+<body>
+  <input type="text" id="t1" />
+
+  <input type="text" id="t2" class="cl" />
+
+  <input type="text" id="t3" class="cla" />
+
+  <script>
+    var t1 = qsi("t1");
+    t1.addClass("cl cl");
+    console.log(t1.classList);
+
+    t1.addClass("cl");
+    console.log(t1.classList);
+
+    t1.addClass("cla");
+    console.log(t1.classList);
+
+    var t2 = qsi("t2");
+    t2.addClass("cl");
+    console.log(t2.classList);
+
+    var t3 = qsi("t3");
+    t3.addClass("cl");
+    console.log(t3.classList);
+
+    t3.removeClass("cl");
+    console.log(t3.classList);
+
+
+    t3.removeClass("cl");
+    console.log(t3.classList);
+
+
+    t3.removeClass("cla");
+    console.log(t3.classList);
+
+    t3.toggleClass("cla cl cla");
+    console.log(t3.classList);
+  </script>
+</body>
+
+</html>

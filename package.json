@@ -4,7 +4,9 @@
   "description": "Add functionalities to HTMLElement, HTMLTextareaElement, HTMLFormElement, document, window",
   "main": "distrib/htmlElement.min.js",
   "scripts": {
-    "test": "exit 0"
+    "test": "exit 0",
+    "version": "npm run build && git add -A lib",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,9 @@
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^3.2.0",
     "gulp-watch": "^5.0.0"
+    
   },
-  "dependencies": {}
+  "dependencies": {
+    "isnotnull": "^0.8.0"
+  }
 }

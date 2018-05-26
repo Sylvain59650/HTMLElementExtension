@@ -14,7 +14,7 @@ const chemins = {
 
 gulp.task("htmlElement.min.js", () => {
   return gulp.src([
-      "src/**.js"
+      "node_modules/isnotnull/distrib/isDef.js", "src/**.js"
     ])
     .pipe(concat("htmlElement.min.js"))
     .pipe(babel({
@@ -55,7 +55,7 @@ gulp.task("watch:htmlElement.min.js", function() {
 
 autoRestart({ "task": "watch" });
 
-gulp.task("default", ["htmlElement.min.js"]);
+gulp.task("default", ["htmlElement.min.js", "watch"]);
 
 
 gulp.task("all", ["default"]);
