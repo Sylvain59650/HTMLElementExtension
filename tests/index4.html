@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <script src="../distrib/htmlElement.min.js"></script>
+</head>
+
+<body>
+  <div id="d1">
+    <div class="cl1">Text in d1</div>
+    <div class="cl1">Text in d1</div>
+  </div>
+
+  <div class="cl1">Text outer d1</div>
+
+  <div class="c2">
+    <div class="cl1">Text in c2</div>
+  </div>
+
+  <script>
+    var d1 = qsi("d1");
+    d1.qsa(".cl1").css("border", "solid 1px red");
+
+    qs(".c2").qs(".cl1").css("color", "green");
+  </script>
+</body>
+
+</html>

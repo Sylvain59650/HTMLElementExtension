@@ -1,18 +1,9 @@
 ﻿const babel = require("gulp-babel");
 const gulp = require("gulp");
 const concat = require("gulp-concat");
-//var uglify = require('gulp-uglify');
-const clean = require("gulp-clean");
 const debug = require("gulp-debug");
 const watch = require("gulp-watch");
-const gutil = require("gulp-util");
-// const sass = require("gulp-sass");
-
-// const webserver = require("gulp-webserver");
-// const browserSync = require("browser-sync").create();
-
-// const express = require("express");
-// const app = express();
+const autoRestart = require("gulp-auto-restart");
 
 const chemins = {
   sources: "./src/",
@@ -28,9 +19,9 @@ gulp.task("htmlElement.min.js", () => {
     .pipe(concat("htmlElement.min.js"))
     .pipe(babel({
       presets: ["es2015"],
-      compact: true,
+      compact: false,
       comments: false,
-      minified: true
+      minified: false
     }))
     //.pipe(uglify())
     //.on('error', function(err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
@@ -38,6 +29,19 @@ gulp.task("htmlElement.min.js", () => {
     .pipe(gulp.dest(chemins.distrib))
 });
 
+gulp.task("release", () => {
+  return gulp.src([
+      "src/**.js"
+    ])
+    .pipe(concat("htmlElement.min.js"))
+    .pipe(babel({
+      presets: ["es2015"],
+      compact: true,
+      comments: false,
+      minified: true
+    }))
+    .pipe(gulp.dest(chemins.distrib))
+});
 
 gulp.task("watch:htmlElement.min.js", function() {
   watch("./src/**.js", function() {
@@ -46,38 +50,10 @@ gulp.task("watch:htmlElement.min.js", function() {
 });
 
 
-// gulp.task("serve", function() {
-//   var server = app.listen(8081, function() {
-//     var host = server.address().address;
-//     var port = server.address().port;
-//     app.use(express.static("tests"));
-//     console.log("listening at http://%s:%s", host, port)
-//   })
-// });
 
 
-// gulp.task("webserver", function() {
-//   gulp.src("tests")
-//     .pipe(webserver({
-//       livereload: true,
-//       directoryListing: true,
-//       open: true
-//     }));
-// });
 
-// gulp.task("sass", function() {
-//   return gulp.src("./styles/sass/**/*.scss")
-//     .pipe(sass().on("error", sass.logError))
-//     .pipe(gulp.dest("./distrib"));
-// });
-
-// gulp.task("browser-sync", function() {
-//   browserSync.init({
-//     server: {
-//       baseDir: "./"
-//     }
-//   });
-// });
+autoRestart({ "task": "watch" });
 
 gulp.task("default", ["htmlElement.min.js"]);
 

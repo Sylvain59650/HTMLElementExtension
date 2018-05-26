@@ -44,7 +44,8 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - after
     - append
     - prepend
-
+    - qs   ~ querySelector
+    - qsa  ~ querySelectorAll
 
 ## HTMLTextareaElement
     - insertAtCaret
@@ -65,7 +66,7 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - qsi ~ document.querySelector byId (no need #)
 
 ## NodeList
-   - addClass
+    - addClass
     - attr
     - removeClass
     - toggleClass
@@ -73,5 +74,5 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - hide
     - show
     - toggleVisible
-    - on
-    - off
+    - qs   ~ querySelector
+    - qsa  ~ querySelectorAll

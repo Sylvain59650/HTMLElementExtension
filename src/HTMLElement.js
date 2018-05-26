@@ -143,6 +143,15 @@ HTMLElement.prototype.offset = function() {
   };
 }
 
+HTMLElement.prototype.qs = function(selector) {
+  return this.querySelector(selector);
+}
+
+HTMLElement.prototype.qsa = function(selector) {
+  return this.querySelectorAll(selector);
+}
+
+
 HTMLElement.prototype.on = function(evtName, fn, useCapture) {
   if (this.addEventListener) {
     // if (this["on" + evtName] !== undefined) {

@@ -1,6 +1,6 @@
 {
   "name": "htmlelement-extension",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "Add functionalities to HTMLElement, HTMLTextareaElement, HTMLFormElement, document, window",
   "main": "distrib/htmlElement.min.js",
   "scripts": {
@@ -33,11 +33,11 @@
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "gulp": "^3.9.1",
+    "gulp-auto-restart": "0.0.3",
     "gulp-babel": "^7.0.1",
-    "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^3.2.0",
-    "gulp-util": "^3.0.8",
     "gulp-watch": "^5.0.0"
-  }
+  },
+  "dependencies": {}
 }

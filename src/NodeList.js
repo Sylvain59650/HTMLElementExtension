@@ -1,40 +1,37 @@
-NodeList.prototype.addClass = function(classNames) {
-  for (let it of this) {
-    it.addClass(classNames);
+if (!NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = function(fn) {
+    if (fn) {
+      for (let i = 0; i < this.length; i++) {
+        let it = this[i];
+        fn(it, i, this);
+      }
+    }
   }
+}
+
+NodeList.prototype.addClass = function(classNames) {
+  this.forEach((it) => it.addClass(classNames));
 }
 
 NodeList.prototype.removeClass = function(classNames) {
-  for (let it of this) {
-    it.removeClass(classNames);
-  }
+  this.forEach((it) => it.removeClass(classNames));
 }
 
 NodeList.prototype.toggleClass = function(classNames) {
-  for (let it of this) {
-    it.toggleClass(classNames);
-  }
+  this.forEach((it) => it.toggleClass(classNames));
 }
 
 NodeList.prototype.css = function(cssProperty, cssValue) {
-  for (let it of this) {
-    it.css(cssProperty, cssValue);
-  }
+  this.forEach((it) => it.css(cssProperty, cssValue));
 }
 
 NodeList.prototype.show = function(visible) {
-  for (let it of this) {
-    it.show(visible);
-  }
+  this.forEach((it) => it.show(visible));
 }
 
 NodeList.prototype.attrs = function(attributes) {
-  for (let it of this) {
-    it.attrs(attributes);
-  }
+  this.forEach((it) => it.attrs(attributes));
 }
 NodeList.prototype.on = function(evtNames, fn, option) {
-  for (let it of this) {
-    it.on(evtNames, fn, option);
-  }
+  this.forEach((it) => it.on(evtNames, fn, option));
 }
