@@ -1,11 +1,11 @@
 {
   "name": "htmlelement-extension",
-  "version": "0.8.8",
+  "version": "0.8.6",
   "description": "Add functionalities to HTMLElement, HTMLTextareaElement, HTMLFormElement, document, window",
   "main": "distrib/htmlElement.min.js",
   "scripts": {
     "test": "exit 0",
-    "patch": "git push --force && git push --tags && npm version patch && git push"
+    "patch": "git add * && git commit -m 'update' && npm version patch && git push --force && git push --tags"
   },
   "repository": {
     "type": "git",
