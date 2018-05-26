@@ -1,12 +1,11 @@
 {
   "name": "htmlelement-extension",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "description": "Add functionalities to HTMLElement, HTMLTextareaElement, HTMLFormElement, document, window",
   "main": "distrib/htmlElement.min.js",
   "scripts": {
     "test": "exit 0",
-    "version": "npm run build && git add -A lib",
-    "postversion": "git push && git push --tags"
+    "patch": "git push --force && git push --tags && npm version patch && git push"
   },
   "repository": {
     "type": "git",
@@ -40,7 +39,6 @@
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^3.2.0",
     "gulp-watch": "^5.0.0"
-    
   },
   "dependencies": {
     "isnotnull": "^0.8.0"
