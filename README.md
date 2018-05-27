@@ -9,7 +9,7 @@
 ![dependencies](https://img.shields.io/david/Sylvain59650/htmlelement-extension.svg)
 ![minified](https://img.shields.io/bundlephobia/min/htmlelement-extension.svg)
 ![linter](https://img.shields.io/badge/eslint-ok-blue.svg)
-![tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)
+[![tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://sylvain59650.github.io/htmlelement-extension/)
 ![license](https://img.shields.io/npm/l/htmlelement-extension.svg)
 [![hits](http://hits.dwyl.com/Sylvain59650/htmlelement-extension.svg)](http://hits.dwyl.com/Sylvain59650/htmlelement-extension)
 </div>

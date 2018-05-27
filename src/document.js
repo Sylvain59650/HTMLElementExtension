@@ -1,3 +1,5 @@
+/* global isDef */
+
 document.ready = function(fn) {
   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
     fn();
@@ -12,20 +14,23 @@ document.getJSON = function(url, onSuccess, onError, options) {
   if (isDef(options)) {
     if (options.forceReload) {
       var rnd = Math.random();
-      if (url.indexOf("?") > -1) {
-        url += "&___t=" + rnd;
-      } else {
-        url += "?___t=" + rnd;
-      }
+      url += (url.indexOf("?") === -1) ? "?" : "&";
+      url += "___t=" + rnd;
     }
   }
   request.open("GET", url, true);
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       if (onSuccess) {
-        onSuccess(JSON.parse(request.responseText));
+        var result = "";
+        if (request.status === 200) {
+          result = JSON.parse(request.responseText);
+        }
+        onSuccess(result);
+
       }
     } else {
+      console.error("ajax error", request);
       if (onError) {
         onError(request);
       }
