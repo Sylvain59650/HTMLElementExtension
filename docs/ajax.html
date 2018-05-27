@@ -28,13 +28,19 @@
       ctrl = {
         getData() {
           document.getJSON("./data.json", function(data) {
-              debugger;
-              dataReceivedContainer.html(data);
+              var msg = "";
+              for (var i = 0; i < data.length; i++) {
+                msg += "First:" + data[i].FirstName + " Last:" + data[i].LastName + "<br/>";
+              }
+              dataReceivedContainer.html(msg);
             },
             function(err) {
-              debugger;
               alert(err);
             });
+        },
+
+        clear() {
+          dataReceivedContainer.html("");
         }
       }
     })
@@ -46,7 +52,7 @@
     </div>
     <div id="right">
       <button onclick="ctrl.getData()">Retrieve data</button>
-
+      <button onclick="ctrl.clear()">Clear</button>
     </div>
   </div>
 </body>
