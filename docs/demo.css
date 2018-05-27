@@ -19,6 +19,7 @@ div.breadcrumb {
   margin-left: 10px;
   margin-top: 20px;
   margin-bottom: 30px;
+  display: inline-block;
 }
 
 a.breadcrumb {
