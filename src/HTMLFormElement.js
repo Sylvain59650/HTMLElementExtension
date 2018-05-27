@@ -21,7 +21,7 @@ HTMLFormElement.prototype.setInputs = function(obj, triggerChange = true) {
   var evt = new Event("change");
   for (var key in obj) {
     let val = obj[key];
-    var inputs = qsa("[name='" + key + "']");
+    var inputs = this.qsa("[name='" + key + "']");
     if (inputs) {
       if (inputs.length > 1) {
         for (let input of inputs) {

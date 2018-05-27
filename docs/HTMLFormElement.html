@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <script src="./node_modules/htmlelement-extension/htmlElement.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+
+<body>
+  <div class="breadcrumb">
+    <a class="breadcrumb" href="index.html">Home</a> &gt;
+    <h1 class="breadcrumb"> Demo for HtmlFormElement</h1>
+  </div>
+  <style>
+    button {
+      padding: 5px;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    var ctrl = null;
+
+    document.ready(function() {
+      var f1 = qsi("f1");
+      var f2 = qsi("f2");
+
+      ctrl = {
+        getThenSetValues() {
+          var values = f1.val();
+          f2.setInputs(values);
+        },
+
+      }
+    })
+  </script>
+
+  <div id="container">
+    <div id="left">
+      <form id="f1">
+        <h2>F1</h2>
+        <input type="text" name="t1" />
+        <label><input type="checkbox" name="c1" value="456" />c1</label>
+        <label><input type="checkbox" name="c2" value="789" />c2</label>
+        <label></label><input type="radio" name="r1" value="1">1</label>
+        <label></label><input type="radio" name="r1" value="2">2</label>
+        <label></label><input type="radio" name="r1" value="3">3</label>
+        <textarea name="text1"></textarea>
+        <select name="s1"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <select name="s2"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+      </form>
+
+      <hr/>
+      <form id="f2">
+        <h2>F2</h2>
+        <input type="text" name="t1" />
+        <label><input type="checkbox" name="c1" value="456" />c1</label>
+        <label><input type="checkbox" name="c2" value="789" />c2</label>
+        <label></label><input type="radio" name="r1" value="1">1</label>
+        <label></label><input type="radio" name="r1" value="2">2</label>
+        <label></label><input type="radio" name="r1" value="3">3</label>
+        <textarea name="text1"></textarea>
+        <select name="s1"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        <select name="s2"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+      </form>
+    </div>
+
+    <div id="right">
+      <button onclick="ctrl.getThenSetValues()">Copy f1 to f2</button>
+
+    </div>
+  </div>
+</body>
+
+</html>

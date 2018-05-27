@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <script src="./node_modules/htmlelement-extension/htmlElement.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+
+<body>
+  <div class="breadcrumb">
+    <a class="breadcrumb" href="index.html">Home</a> &gt;
+    <h1 class="breadcrumb"> Demo for Textarea</h1>
+  </div>
+  <style>
+    button {
+      padding: 5px;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    var ctrl = null;
+
+    document.ready(function() {
+      var t1 = qsi("t1");
+      var tpl = qsi("tpl");
+
+      ctrl = {
+        insertAtCaret() {
+          t1.insertAtCaret(tpl.value);
+        }
+      }
+    })
+  </script>
+
+  <div id="container">
+    <div id="left">
+      <input type="text" placeholder="give some text" id="tpl" />
+      <br/>
+      <textarea id="t1">
+          </textarea>
+    </div>
+    <div id="right">
+      <button onclick="ctrl.insertAtCaret()">t1.insertAtCaret</button>
+
+    </div>
+  </div>
+</body>
+
+</html>

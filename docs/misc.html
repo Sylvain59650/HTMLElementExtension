@@ -1,0 +1,84 @@
+<html>
+
+<head>
+  <script src="./node_modules/htmlelement-extension/htmlElement.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+
+<body>
+  <div class="breadcrumb">
+    <a class="breadcrumb" href="index.html">Home</a> &gt;
+    <h1 class="breadcrumb"> Demo for manipulate DOM</h1>
+  </div>
+  <style>
+    button {
+      padding: 5px;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    var ctrl = null;
+    var tip = null;
+
+    function clickOnMe(ev) {
+      alert("clicked on " + ev.target.id);
+    }
+
+    function mouseOverMe(ev) {
+      tip.html("over " + ev.target.id);
+    }
+
+    document.ready(function() {
+      alert("DOM is loaded !!");
+
+      var left = qsi("left");
+      tip = qs(".tip");
+
+
+      ctrl = {
+        counter: 0,
+
+        insertElement() {
+          ctrl.counter++;
+          var id = "i" + ctrl.counter;
+          var el = newElement("div", {
+            id: id,
+            class: "cl1"
+          }, "i'm " + id, {
+            click: clickOnMe,
+            mouseover: mouseOverMe
+          });
+          left.beforeEnd(el);
+        },
+
+        moveDown() {
+          var spans = qsa(".cl1");
+          var first = spans[0];
+          var last = spans[spans.length - 1];
+          last.afterEnd(first);
+        },
+
+        moveUp() {
+          var spans = qsa(".cl1");
+          var first = spans[0];
+          var last = spans[spans.length - 1];
+          first.beforeBegin(last);
+        }
+      }
+    })
+  </script>
+
+  <div id="container">
+    <div id="left">
+      <span class="tip"></span>
+    </div>
+    <div id="right">
+      <button onclick="ctrl.insertElement()">Insert Element</button>
+      <br/>
+      <button onclick="ctrl.moveDown()">Move down Element</button>
+      <button onclick="ctrl.moveUp()">Move up Element</button>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <script src="./node_modules/htmlelement-extension/htmlElement.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+
+<body>
+  <div class="breadcrumb">
+    <a class="breadcrumb" href="index.html">Home</a> &gt;
+    <h1 class="breadcrumb"> Demo for ajax</h1>
+  </div>
+  <style>
+    button {
+      padding: 5px;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    var ctrl = null;
+    var dataReceivedContainer = null;
+
+    document.ready(function() {
+      var left = qsi("left");
+      dataReceivedContainer = qsi("dataReceivedContainer");
+
+
+      ctrl = {
+        getData() {
+          document.getJSON("./data.json", function(data) {
+              debugger;
+              dataReceivedContainer.html(data);
+            },
+            function(err) {
+              debugger;
+              alert(err);
+            });
+        }
+      }
+    })
+  </script>
+
+  <div id="container">
+    <div id="left">
+      <span id="dataReceivedContainer"></span>
+    </div>
+    <div id="right">
+      <button onclick="ctrl.getData()">Retrieve data</button>
+
+    </div>
+  </div>
+</body>
+
+</html>

@@ -46,8 +46,15 @@ gulp.task("release", () => {
 
 gulp.task("demo", () => {
   return gulp.src([
-      "distrib/htmlElement.min.js"
+      "src/**.js"
     ])
+    .pipe(concat("htmlElement.min.js"))
+    .pipe(babel({
+      presets: ["es2015"],
+      compact: false,
+      comments: false,
+      minified: false
+    }))
     .pipe(gulp.dest(chemins.demo))
 });
 
@@ -63,7 +70,7 @@ gulp.task("watch:htmlElement.min.js", function() {
 
 autoRestart({ "task": "watch" });
 
-gulp.task("default", ["htmlElement.min.js", "watch"]);
+gulp.task("default", ["htmlElement.min.js", "demo", "watch"]);
 
 
 gulp.task("all", ["default"]);
