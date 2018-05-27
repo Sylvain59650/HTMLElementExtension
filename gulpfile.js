@@ -7,7 +7,8 @@ const autoRestart = require("gulp-auto-restart");
 
 const chemins = {
   sources: "./src/",
-  distrib: "./distrib/"
+  distrib: "./distrib/",
+  demo: "./docs/node_modules/htmlelement-extension/"
 };
 
 
@@ -41,6 +42,13 @@ gulp.task("release", () => {
       minified: true
     }))
     .pipe(gulp.dest(chemins.distrib))
+});
+
+gulp.task("demo", () => {
+  return gulp.src([
+      "distrib/htmlElement.min.js"
+    ])
+    .pipe(gulp.dest(chemins.demo))
 });
 
 gulp.task("watch:htmlElement.min.js", function() {

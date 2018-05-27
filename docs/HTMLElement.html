@@ -1,0 +1,102 @@
+<html>
+
+<head>
+  <script src="./node_modules/htmlelement-extension/htmlElement.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+
+<body>
+  <div class="breadcrumb">
+    <a class="breadcrumb" href="index.html">Home</a> &gt;
+    <h1 class="breadcrumb"> Demo for any HtmlElement</h1>
+  </div>
+  <style>
+    .cl1 {
+      background-color: coral;
+      border: solid 5px tomato;
+      font-weight: bolder;
+    }
+    
+    .cl2 {
+      font-size: 8pt;
+      color: red;
+    }
+    
+    button {
+      padding: 5px;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    var ctrl = null;
+
+    document.ready(function() {
+      var d1 = qsi("d1");
+
+      ctrl = {
+        addBorder() {
+          d1.css("border", "solid 2px gray");
+        },
+
+        toggleVisible() {
+          d1.toggleVisible();
+        },
+
+        addClass() {
+          d1.addClass("cl1");
+        },
+
+        toggleClass() {
+          d1.toggleClass("cl2");
+        },
+
+        appendInput() {
+          d1.beforeEndHTML("<input type=checkbox />");
+        },
+
+        changeHtml() {
+          d1.html("" + new Date());
+        },
+
+        outerHtml() {
+          alert("outerHtml():" + d1.outerHtml());
+        },
+
+        checkboxCount() {
+          var checkboxes = qsa("input[type='checkbox']");
+          alert("" + checkboxes.length + " checkboxes on document");
+        }
+      }
+    })
+  </script>
+
+  <div id="container">
+    <div id="left">
+      <div id="d0">
+        d0
+      </div>
+
+      <div id="d1">
+        d1
+      </div>
+
+      <div id="d2">
+        d2
+      </div>
+    </div>
+
+    <div id="right">
+      <button onclick="ctrl.addBorder()">Add border to d1</button>
+      <button onclick="ctrl.toggleVisible()">d1.toggleVisible()</button>
+      <button onclick="ctrl.addClass()">d1.addClass("cl1")</button>
+      <button onclick="ctrl.toggleClass()">d1.toggleClass("cl2")</button>
+
+      <button onclick="ctrl.appendInput()">d1.beforeEndHTML("something")</button>
+      <button onclick="ctrl.changeHtml()">d1.html("something")</button>
+      <button onclick="ctrl.outerHtml()">d1.outerHtml()</button>
+      <button onclick="ctrl.checkboxCount()">selectors (checkbox)</button>
+    </div>
+  </div>
+</body>
+
+</html>
