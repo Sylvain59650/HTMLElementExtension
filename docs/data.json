@@ -1,6 +1,6 @@
 [
-    {firstName:"toto", lastName:"Big"},
-    {firstName:"titi", lastName:"Little"},
-    {firstName:"tata", lastName:"Horn"},
-    {firstName:"lolo", lastName:"Mohican"},
+    {"firstName":"toto", "lastName":"Big"},
+    {"firstName":"titi", "lastName":"Little"},
+    {"firstName":"tata", "lastName":"Horn"},
+    {"firstName":"lolo", "lastName":"Mohican"},
 ]
