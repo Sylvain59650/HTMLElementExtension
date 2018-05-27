@@ -32,6 +32,7 @@ gulp.task("htmlElement.min.js", () => {
 
 gulp.task("release", () => {
   return gulp.src([
+      "node_modules/isnotnull/distrib/isDef.js",
       "src/**.js"
     ])
     .pipe(concat("htmlElement.min.js"))
@@ -46,6 +47,7 @@ gulp.task("release", () => {
 
 gulp.task("demo", () => {
   return gulp.src([
+      "node_modules/isnotnull/distrib/isDef.js",
       "src/**.js"
     ])
     .pipe(concat("htmlElement.min.js"))
