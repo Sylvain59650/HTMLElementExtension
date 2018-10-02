@@ -2,6 +2,8 @@
 
 <head>
   <script src="../distrib/htmlElement.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/htmlelement-events-extension@0.9.8/distrib/htmlElement-events.min.js"></script>
+
   <style>
     #t1 {
       font-size: 10pt
@@ -149,12 +151,31 @@
 
     <button type="button" id="b1">b1</button>
     <button type="button" id="b2">b2</button>
+
+    <button type="button" name="b3">b3</button>
+
+    <button type="button" name="b4">b4</button>
+    <div id="d1">I'm d1
+      <div>
+        <input type="checkbox" name="c1" value="C1" />
+        <input type="checkbox" name="c1" value="C2" />
+      </div>
+    </div>
     <script>
       qsa("#b1,#b2").on("click", function() {
         this.toggleClass("error");
       });
       qsa("#b2").on("click", function() {
         qs("#b1").toggleVisible();
+      });
+
+      qsn("b3").on("click", function() {
+        qs("#b1").toggleVisible();
+      });
+
+      qsn("b4").on("click", function() {
+        qsnames("c1").addClass("toto");
+        qsnames("c1").forObject((it) => it.addClass("titi"));
       });
     </script>
 </body>

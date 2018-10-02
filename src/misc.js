@@ -27,3 +27,11 @@ window.qsa = function(selectors) {
 window.qsi = function(id) {
   return document.querySelector("#" + id);
 }
+
+window.qsn = function(name) {
+  return document.querySelector("[name='" + name + "']");
+}
+
+window.qsnames = function(name) {
+  return document.querySelectorAll("[name='" + name + "']");
+}

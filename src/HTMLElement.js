@@ -26,6 +26,24 @@ HTMLElement.prototype.toggleClass = function(className) {
   }
 }
 
+HTMLElement.prototype.class = function(classNames) {
+  var classes = classNames.split(" ");
+  for (var i = 0; i < classes.length; i++) {
+    var cl = classes[i];
+    if (cl[0] === "-") {
+      cl = cl.substring(1);
+      if (this.classList.contains(cl)) {
+        this.classList.remove(cl);
+      }
+    } else {
+      if (cl[0] === "+") {
+        cl = cl.substring(1);
+      }
+      this.classList.add(cl);
+    }
+  }
+}
+
 HTMLElement.prototype.hasClass = function(className) {
   return this.classList.contains(className);
 }
@@ -72,7 +90,6 @@ HTMLElement.prototype.outerHeight = function(withMargin) {
     return height;
   }
   return this.offsetHeight;
-
 }
 
 HTMLElement.prototype.outerWidth = function(withMargin) {
@@ -169,4 +186,12 @@ HTMLElement.prototype.qs = function(selector) {
 
 HTMLElement.prototype.qsa = function(selector) {
   return this.querySelectorAll(selector);
+}
+
+HTMLElement.prototype.qsn = function(name) {
+  return this.querySelector("[name='" + name + "']");
+}
+
+HTMLElement.prototype.qsnames = function(name) {
+  return this.querySelectorAll("[name='" + name + "']");
 }

@@ -3,7 +3,6 @@ const gulp = require("gulp");
 const concat = require("gulp-concat");
 const debug = require("gulp-debug");
 const watch = require("gulp-watch");
-const autoRestart = require("gulp-auto-restart");
 
 const chemins = {
   sources: "./src/",
@@ -69,8 +68,6 @@ gulp.task("watch:htmlElement.min.js", function() {
 
 
 
-
-autoRestart({ "task": "watch" });
 
 gulp.task("default", ["htmlElement.min.js", "demo", "watch"]);
 

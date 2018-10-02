@@ -24,7 +24,11 @@ document.getJSON = function(url, onSuccess, onError, options) {
       if (onSuccess) {
         var result = "";
         if (request.status === 200) {
-          result = JSON.parse(request.responseText);
+          if (isDef(request.responseText) && request.responseText !== "") {
+            result = JSON.parse(request.responseText);
+          } else {
+            result = "{}";
+          }
         }
         onSuccess(result);
 
@@ -61,6 +65,12 @@ document.ajax = function(method, url, data, onSuccess, onError) {
 document.getScripts = function(arrScriptsUrl) {
   for (var url of arrScriptsUrl) {
     document.afterBegin(newElement("script", { src: url }));
+  }
+}
+
+document.getScriptsIf = function(condition, arrScriptsUrl) {
+  if (condition) {
+    document.getScripts(arrScriptsUrl);
   }
 }
 
