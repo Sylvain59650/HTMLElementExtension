@@ -1,18 +1,20 @@
  # htmlelement-extension
  
 
- <div style="display:inline">
-
-[![build](https://travis-ci.org/Sylvain59650/htmlelement-extension.png?branch=master)](https://travis-ci.org/Sylvain59650/htmlelement-extension)
-[![version](https://img.shields.io/npm/v/htmlelement-extension.svg)](https://www.npmjs.com/package/htmlelement-extension)
-![package](https://img.shields.io/github/package-json/v/Sylvain59650/htmlelement-extension.svg)
-[![dependencies](https://img.shields.io/david/Sylvain59650/htmlelement-extension.svg)](https://david-dm.org/Sylvain59650/htmlelement-extension)
-![minified](https://img.shields.io/bundlephobia/min/htmlelement-extension.svg)
-![linter](https://img.shields.io/badge/eslint-ok-blue.svg)
-[![tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://sylvain59650.github.io/htmlelement-extension/)
-![license](https://img.shields.io/npm/l/htmlelement-extension.svg)
-![hits](http://hits.dwyl.com/Sylvain59650/htmlelement-extension.svg)
-</div>
+  <div style="display:inline">
+    <a target="_blank" title="build" href="https://travis-ci.org/Sylvain59650/htmlElement-extension"><img src="https://travis-ci.org/Sylvain59650/htmlElement-extension.png?branch=master" /></a>
+    <a target="_blank" title="version" href="https://www.npmjs.com/package/htmlelement-extension"><img src="https://img.shields.io/npm/v/htmlElement-extension.svg" /></a>
+    <a target="_blank" title="package" href="https://github.com/Sylvain59650/htmlElement-extension"><img src="https://img.shields.io/github/package-json/v/Sylvain59650/htmlElement-extension.svg" /></a>
+    <a target="_blank" title="dependencies" href="https://david-dm.org/Sylvain59650/htmlElement-extension"><img src="https://img.shields.io/david/Sylvain59650/htmlElement-extension.svg" /></a>
+    <a target="_blank" title="dependencies graph" href="http://npm.anvaka.com/#/view/2d/htmlElement-extension"><img src="https://img.shields.io/badge/dependencies-graph-blue.svg" /></a>
+    <img src="https://img.shields.io/bundlephobia/min/htmlelement-extension.svg" />
+    <img src="https://img.shields.io/badge/eslint-ok-blue.svg" />
+    <a target="_blank" title="tests" href="https://sylvain59650.github.io/htmlElement-extension/"><img src="https://img.shields.io/badge/tests-passing-brightgreen.svg" /></a>
+    <a target="_blank" title="downloads" href="https://www.jsdelivr.com/package/npm/htmlElement-extension"><img src="https://data.jsdelivr.com/v1/package/npm/htmlElement-extension/badge" /></a>
+    <a target="_blank" title="cdn" href="https://cdn.jsdelivr.net/npm/htmlElement-extension/distrib/htmlElement-extension.min.js"><img src="https://img.shields.io/badge/cdn-jsdeliv-black.svg" /></a>
+    <img src="https://img.shields.io/npm/l/htmlelement-extension.svg" />
+    <img src="https://hits.dwyl.com/Sylvain59650/htmlElement-extension.svg" />
+  </div>
  
  
  <div class="Note" style="color:orange;font-style:italic">

@@ -1,13 +1,12 @@
 ﻿const babel = require("gulp-babel");
 const gulp = require("gulp");
 const concat = require("gulp-concat");
-const debug = require("gulp-debug");
 const watch = require("gulp-watch");
 
 const chemins = {
   sources: "./src/",
   distrib: "./distrib/",
-  demo: "./docs/node_modules/htmlelement-extension/"
+  demo: "./docs/demo/modules/htmlelement-extension/"
 };
 
 
@@ -19,9 +18,9 @@ gulp.task("htmlElement.min.js", () => {
     .pipe(concat("htmlElement.min.js"))
     .pipe(babel({
       presets: ["es2015"],
-      compact: false,
+      compact: true,
       comments: false,
-      minified: false
+      minified: true
     }))
     //.pipe(uglify())
     //.on('error', function(err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
@@ -52,9 +51,9 @@ gulp.task("demo", () => {
     .pipe(concat("htmlElement.min.js"))
     .pipe(babel({
       presets: ["es2015"],
-      compact: false,
+      compact: true,
       comments: false,
-      minified: false
+      minified: true
     }))
     .pipe(gulp.dest(chemins.demo))
 });
