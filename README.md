@@ -96,3 +96,6 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - toggleClass
     - css
     - show
+
+# Usage
+  <a href="https://sylvain59650.github.io/htmlelement-extension/">API &amp; DEMO</a>
