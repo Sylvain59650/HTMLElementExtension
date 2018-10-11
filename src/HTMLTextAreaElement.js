@@ -19,16 +19,40 @@ HTMLTextAreaElement.prototype.insertAtCaret = function(text) {
   }
 }
 
+HTMLTextAreaElement.prototype.val = function() {
+  if (arguments.length == 1) {
+    this.value = arguments[0];
+  }
+  return this.value;
+}
 
-// HTMLTextAreaElement.prototype.ml = function(nb) {
-//   if (arguments.length === 0) {
-//     return this.attr("maxlength");
-//   }
-//   this.attr("maxlength", nb);
-//   let self = this;
-//   this.on("keyup", function() {
-//     if (self.value.length > nb) {
-//       self.value = self.value.slice(0, nb);
-//     }
-//   });
-// }
+HTMLTextAreaElement.prototype.setNoChanges = function() {
+  var value = this.value;
+  var id = this.name + "_old";
+  var elem = qsi(id);
+  if (elem === null) {
+    var elem = newElement("div", { id: this.name + "_old" }, value, null, { display: "none" });
+    this.afterEnd(elem);
+  } else {
+    elem.innerHTML = value;
+  }
+}
+
+HTMLTextAreaElement.prototype.isModified = function() {
+    var id = this.name + "_old";
+    var elem = qsi(id);
+    if (elem == null) { return false; }
+    return elem.innerHTML !== this.value;
+  }
+  // HTMLTextAreaElement.prototype.ml = function(nb) {
+  //   if (arguments.length === 0) {
+  //     return this.attr("maxlength");
+  //   }
+  //   this.attr("maxlength", nb);
+  //   let self = this;
+  //   this.on("keyup", function() {
+  //     if (self.value.length > nb) {
+  //       self.value = self.value.slice(0, nb);
+  //     }
+  //   });
+  // }

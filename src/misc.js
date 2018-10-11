@@ -1,4 +1,4 @@
-window.newElement = function(tagName, attributes, htmlContent, events) {
+window.newElement = function(tagName, attributes, htmlContent, events, css) {
   var tag = document.createElement(tagName);
   if (attributes) {
     tag.attrs(attributes);
@@ -11,7 +11,9 @@ window.newElement = function(tagName, attributes, htmlContent, events) {
       //tag.on(ev, events[ev], false);
       tag.addEventListener(ev, events[ev]);
     }
-
+  }
+  if (css) {
+    tag.css(css);
   }
   return tag;
 }

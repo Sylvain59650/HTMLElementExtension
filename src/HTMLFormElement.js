@@ -52,3 +52,19 @@ HTMLFormElement.prototype.setInputs = function(obj, triggerChange = true) {
     }
   }
 }
+
+
+HTMLFormElement.prototype.setNoChanges = function() {
+  var inputs = this.elements;
+  for (var input of inputs) {
+    input.setNoChanges();
+  }
+}
+
+HTMLFormElement.prototype.isModified = function() {
+  var inputs = this.elements;
+  for (var input of inputs) {
+    if (input.isModified()) { return true; }
+  }
+  return false;
+}
