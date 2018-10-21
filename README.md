@@ -84,11 +84,11 @@ The lastest version of this document is available on [Github > HTMLElementExtens
 
 ## window
     - newElement
-    - qs   ~ document.querySelector
-    - qsa  ~ document.querySelectorAll
-    - qsi ~ document.querySelector byId (no need #)
-    - qsn ~ document.querySelector byName (no need [name='xxx'])
-    - qsnames ~ document.querySelectorAll byName (no need [name='xxx'])
+    - qs        ~ document.querySelector
+    - qsa       ~ document.querySelectorAll
+    - qsi       ~ document.querySelector byId (no need #)
+    - qsn       ~ document.querySelector byName (no need [name='xxx'])
+    - qsnames   ~ document.querySelectorAll byName (no need [name='xxx'])
 
 ## NodeList
     - addClass
@@ -96,6 +96,7 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - toggleClass
     - css
     - show
+    - remove
 
 # Usage
   <a href="https://sylvain59650.github.io/htmlelement-extension/">API &amp; DEMO</a>

@@ -1,4 +1,4 @@
-/* global isDef */
+/* global isDef qs */
 
 document.ready = function(fn) {
   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
@@ -64,7 +64,7 @@ document.ajax = function(method, url, data, onSuccess, onError) {
 
 document.getScripts = function(arrScriptsUrl) {
   for (var url of arrScriptsUrl) {
-    document.afterBegin(newElement("script", { src: url }));
+    qs("body").beforeEnd(newElement("script", { src: url }));
   }
 }
 
@@ -76,6 +76,6 @@ document.getScriptsIf = function(condition, arrScriptsUrl) {
 
 document.getStyles = function(arrStylessUrl, media = "all") {
   for (var url of arrStylessUrl) {
-    document.afterBegin(newElement("link", { rel: "stylesheet", type: "text/css", href: url, media: media }));
+    qs("body").beforeEnd(newElement("link", { rel: "stylesheet", type: "text/css", href: url, media: media }));
   }
 }

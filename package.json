@@ -1,6 +1,6 @@
 {
   "name": "htmlelement-extension",
-  "version": "0.8.10",
+  "version": "0.8.11",
   "description": "Add functionalities to HTMLElement, HTMLInputElement, HTMLTextareaElement, HTMLFormElement, HTMLSelectElement, document, window",
   "main": "distrib/htmlElement.min.js",
   "scripts": {
@@ -24,7 +24,13 @@
     "document",
     "window"
   ],
-  "author": "Sylvain LONGEPEE",
+  "author": "sylvain59",
+  "maintainers": [
+    {
+      "name": "sylvain59",
+      "email": "slongepee@laposte.net"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Sylvain59650/htmlelement-extension/issues"
