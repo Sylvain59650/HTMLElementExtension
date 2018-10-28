@@ -3,7 +3,7 @@
 
  <div style="display:inline
     <a target="_blank" title="build" href="https://travis-ci.org/Sylvain59650/htmlelement-extension"><img src="https://travis-ci.org/Sylvain59650/htmlelement-extension.png?branch=master" /></a>
-    <a target="_blank" title="version" href="https://www.npmjs.com/package/htmlelement-extension"><img src="https://img.shields.io/npm/v/htmlElement-extension.svg" /></a>
+    <a target="_blank" title="version" href="https://www.npmjs.com/package/htmlelement-extension"><img src="https://img.shields.io/npm/v/htmlelement-extension.svg" /></a>
     <a target="_blank" title="package" href="https://github.com/Sylvain59650/htmlElement-extension"><img src="https://img.shields.io/github/package-json/v/Sylvain59650/htmlElement-extension.svg" /></a>
     <a target="_blank" title="dependencies" href="https://david-dm.org/Sylvain59650/htmlElement-extension"><img src="https://img.shields.io/david/Sylvain59650/htmlelement-extension.svg" /></a>
     <a target="_blank" title="dependencies graph" href="http://npm.anvaka.com/#/view/2d/htmlElement-extension"><img src="https://img.shields.io/badge/dependencies-graph-blue.svg" /></a>
