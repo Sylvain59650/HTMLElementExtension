@@ -9,15 +9,9 @@ plugins:
       enabled: true
 version: "2"
 checks:
-  similar-code:
-    config:
-      threshold: 4
-    identical-code:
-      config:
-        threshold: 4
   argument-count:
     config:
-      threshold: 7
+      threshold: 5
   complex-logic:
     config:
       threshold: 10
