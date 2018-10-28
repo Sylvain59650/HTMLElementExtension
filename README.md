@@ -9,6 +9,7 @@
     <a target="_blank" title="dependencies graph" href="http://npm.anvaka.com/#/view/2d/htmlElement-extension"><img src="https://img.shields.io/badge/dependencies-graph-blue.svg" /></a>
     <img src="https://img.shields.io/bundlephobia/min/htmlelement-extension.svg" />
     <img src="https://img.shields.io/badge/eslint-ok-blue.svg" />
+    <a href="https://codeclimate.com/github/Sylvain59650/htmlelement-extension/maintainability"><img src="https://api.codeclimate.com/v1/badges/45099c395edb809fc885/maintainability" /></a>
     <a target="_blank" title="tests" href="https://sylvain59650.github.io/htmlElement-extension/"><img src="https://img.shields.io/badge/tests-passing-brightgreen.svg" /></a>
     <a target="_blank" title="downloads" href="https://www.jsdelivr.com/package/npm/htmlElement-extension"><img src="https://data.jsdelivr.com/v1/package/npm/htmlElement-extension/badge" /></a>
     <a target="_blank" title="cdn" href="https://cdn.jsdelivr.net/npm/htmlElement-extension/distrib/htmlElement-extension.min.js"><img src="https://img.shields.io/badge/cdn-jsdeliv-black.svg" /></a>
