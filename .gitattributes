@@ -1,0 +1,4 @@
+src/* linguist-vendored=true
+docs/*  linguist-vendored=true
+tests/*  linguist-vendored=true
+styles/*  linguist-vendored=true
