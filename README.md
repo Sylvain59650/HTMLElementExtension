@@ -6,7 +6,7 @@
     <a target="_blank" title="version" href="https://www.npmjs.com/package/htmlelement-extension"><img src="https://img.shields.io/npm/v/htmlelement-extension.svg" /></a>
     <a target="_blank" title="package" href="https://github.com/Sylvain59650/htmlElement-extension"><img src="https://img.shields.io/github/package-json/v/Sylvain59650/htmlElement-extension.svg" /></a>
     <a target="_blank" title="dependencies" href="https://david-dm.org/Sylvain59650/htmlElement-extension"><img src="https://img.shields.io/david/Sylvain59650/htmlelement-extension.svg" /></a>
-    <a target="_blank" title="dependencies graph" href="http://npm.anvaka.com/#/view/2d/htmlElement-extension"><img src="https://img.shields.io/badge/dependencies-graph-blue.svg" /></a>
+    <a target="_blank" title="dependencies graph" href="http://npm.anvaka.com/#/view/2d/htmlelement-extension"><img src="https://img.shields.io/badge/dependencies-graph-blue.svg" /></a>
     <img src="https://img.shields.io/bundlephobia/min/htmlelement-extension.svg" />
     <img src="https://img.shields.io/badge/eslint-ok-blue.svg" />
     <a href="https://codeclimate.com/github/Sylvain59650/htmlelement-extension/maintainability"><img src="https://api.codeclimate.com/v1/badges/45099c395edb809fc885/maintainability" /></a>
