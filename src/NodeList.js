@@ -9,20 +9,6 @@ if (!NodeList.prototype.forEach) {
   }
 }
 
-NodeList.prototype.forObject = function(fn) {
-  // this.forEach((it) => fn.bind(it).call());
-  debugger;
-  fn.apply(null, this);
-  // if (fn) {
-  //   for (let i = 0; i < this.length; i++) {
-  //     let it = this[i];
-
-  //     var f = fn.bind(it);
-  //     f.apply(it);
-  //   }
-  // }
-}
-
 NodeList.prototype.addClass = function(classNames) {
   this.forEach((it) => it.addClass(classNames));
   return this;

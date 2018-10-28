@@ -1,3 +1,4 @@
+/* global qsi */
 HTMLTextAreaElement.prototype.insertAtCaret = function(text) {
   text = text || "";
   if (document.selection) {
@@ -31,7 +32,7 @@ HTMLTextAreaElement.prototype.setNoChanges = function() {
   var id = this.name + "_old";
   var elem = qsi(id);
   if (elem === null) {
-    var elem = newElement("div", { id: this.name + "_old" }, value, null, { display: "none" });
+    elem = newElement("div", { id: this.name + "_old" }, value, null, { display: "none" });
     this.afterEnd(elem);
   } else {
     elem.innerHTML = value;

@@ -34,9 +34,10 @@ HTMLSelectElement.prototype.fill = function(data, keyName, valueName, linkData) 
 }
 
 HTMLSelectElement.prototype.load = function(url, keyName, valueName, linkData) {
+  var ctx = this;
   document.getJSON(url, function(data) {
-    this.fill(data, keyName, valueName, linkData);
-  }, function(err) {
-    this.options.length = 0;
+    ctx.fill(data, keyName, valueName, linkData);
+  }, function() {
+    ctx.options.length = 0;
   });
 }

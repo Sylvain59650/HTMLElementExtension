@@ -1,5 +1,3 @@
-/* global qsa */
-
 HTMLFormElement.prototype.val = function() {
   var dic = {};
   var formdata = new FormData(this);
