@@ -44,3 +44,4 @@ exclude_patterns:
 - "package*"
 - "eslint*"
 - "*.yml"
+- "README*"
