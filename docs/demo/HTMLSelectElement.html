@@ -8,7 +8,7 @@
 <body>
   <div class="breadcrumb">
     <a class="breadcrumb" href="index.html">Home</a> &gt;
-    <h1 class="breadcrumb"> Demo for Textarea</h1>
+    <h1 class="breadcrumb"> Demo for HtmlSelectElement</h1>
   </div>
   <style>
     button {
@@ -17,31 +17,30 @@
     }
   </style>
   <script>
-    var ctrl = null;
-
     document.ready(function() {
-      var t1 = qsi("t1");
-      var tpl = qsi("tpl");
+      var s1 = qsi("s1");
+      var b1 = qsi("b1");
 
-      ctrl = {
-        insertAtCaret() {
-          t1.insertAtCaret(tpl.value);
-        }
-      }
-    })
+      s1.addEventListener("change", function() {
+        alert(s1.val());
+      });
+
+    });
   </script>
 
   <div id="container">
     <div id="left">
-      <input type="text" placeholder="give some text" id="tpl" />
+      <select id="s1">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
       <br/>
-      <textarea id="t1">
-          </textarea>
+      <button id="b1">Which</button>
     </div>
-    <div id="right">
-      <button onclick="ctrl.insertAtCaret()">t1.insertAtCaret</button>
 
-    </div>
   </div>
 </body>
 

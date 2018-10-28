@@ -2,69 +2,162 @@
 
 <head>
   <title>htmlElement-extension</title>
-  <link href="https://sylvain59650.github.io/demonstrator/css/demo.css" type="text/css" rel="stylesheet" />
-  <link href="https://sylvain59650.github.io/demonstrator/css/style.css" type="text/css" rel="stylesheet" />
+  <link href="css/theme1.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="breadcrumb">
-    <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
-      <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
-    <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+  <div class="container">
+    <div>
+      <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
+        <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
+      <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+    </div>
+
+
+
+    <div class="breadcrumb">
+      <a href="index.html">API</a><a href="HTMLElement.html">HTMLElement</a>
+      <h1>HTMLInputElement</h1>
+    </div>
+
+
+    <nav>
+      <li><a href="#toTextBox">toTextBox</a></li>
+      <li><a href="#toPasswordBox">toPasswordBox</a></li>
+      <li><a href="#togglePassword">togglePassword</a></li>
+      <li><a href="#setNoChanges">setNoChanges</a></li>
+      <li><a href="#isModified">isModified</a></li>
+      <li><a href="#val">val</a></li>
+      <nav>
+
+
+        <article id="toTextBox">
+          <h2>toTextBox</h2>
+          <div class="signature">
+            <p>.toTextBox()</p>
+          </div>
+          <div class="description">
+            <p>Transform a &lt;input type="password" /&gt; in &lt;input type="text" /&gt; to see password</p>
+          </div>
+          <p class="example"></p>
+          <xmp>
+            <input type="password" id="el" value="secret" />
+
+            <script>
+              var el = qsi("el");
+              el.toTextBox();
+            </script>
+
+          </xmp>
+        </article>
+
+
+        <article id="toPasswordBox">
+          <h2>toPasswordBox</h2>
+          <div class="signature">
+            <p>.toPasswordBox()</p>
+          </div>
+          <div class="description">
+            <p>Transform a &lt;input type="text" /&gt; in &lt;input type="password" /&gt; to hide password</p>
+          </div>
+          <p class="example"></p>
+          <xmp>
+            <input type="text" id="el" value="secret" />
+
+            <script>
+              var el = qsi("el");
+              el.toPasswordBox();
+            </script>
+
+          </xmp>
+        </article>
+
+
+        <article id="togglePassword">
+          <h2>togglePassword</h2>
+          <div class="signature">
+            <p>.togglePassword()</p>
+          </div>
+          <div class="description">
+            <p>Transform a &lt;input type="text" /&gt; in &lt;input type="password" /&gt; or vice versa to show/hide password</p>
+          </div>
+          <p class="example"></p>
+          <xmp>
+            <input type="text" id="el" value="secret" />
+
+            <script>
+              var el = qsi("el");
+              el.togglePassword();
+            </script>
+
+          </xmp>
+        </article>
+
+
+        <article id="setNoChanges">
+          <h2>setNoChanges</h2>
+          <div class="signature">
+            <p>.setNoChanges()</p>
+          </div>
+          <div class="description">
+            <p>Indicate that the input element is not modified</p>
+          </div>
+          <p class="example"></p>
+          <xmp>
+            <input type="text" id="el" value="secret" />
+
+            <script>
+              var el = qsi("el");
+              el.setNoChanges();
+            </script>
+          </xmp>
+        </article>
+
+
+        <article id="isModified">
+          <h2>isModified</h2>
+          <div class="signature">
+            <p>.isModified()</p>
+          </div>
+          <div class="description">
+            <p>Indicate if the input is modified or not</p>
+          </div>
+          <p class="example"></p>
+          <xmp>
+            <input type="text" id="el" value="123456" />
+
+            <script>
+              var el = qsi("el");
+              var ret = el.isModified();
+            </script>
+          </xmp>
+        </article>
+
+        <article id="val">
+          <h2>val</h2>
+          <div class="signature">
+            <p>.val( [<i>value</i>] )</p>
+          </div>
+          <div class="arg">
+            <p><i>value</i>If Specified, set the input to the value or return the value or the input
+          </div>
+          <div class="description">
+            <p>set the input to the value or return the value or the input</p>
+          </div>
+          <p class="example"></p>
+          <xmp>
+            <input type="text" id="el" value="123456" />
+
+            <script>
+              var el = qsi("el");
+              var ret = el.val(); // 123456
+
+              el.val("789");
+              ret = el.val(); // 789
+            </script>
+          </xmp>
+        </article>
   </div>
-
-  <div class="breadcrumb">
-    <a href="index.html">API</a>
-    <h1>HTMLInputElement</h1>
-  </div>
-
-
-  <article id="toTextBox">
-    <h2>toTextBox</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-
-  <article id="toPasswordBox">
-    <h2>toPasswordBox</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-
-  <article id="togglePassword">
-    <h2>togglePassword</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-
-  <article id="setNoChanges">
-    <h2>setNoChanges</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-
-  <article id="isModified">
-    <h2>isModified</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="val">
-    <h2>val</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
 </body>
 
 </html>

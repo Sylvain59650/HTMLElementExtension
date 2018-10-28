@@ -2,59 +2,142 @@
 
 <head>
   <title>htmlElement-extension</title>
-  <link href="https://sylvain59650.github.io/demonstrator/css/demo.css" type="text/css" rel="stylesheet" />
-  <link href="https://sylvain59650.github.io/demonstrator/css/style.css" type="text/css" rel="stylesheet" />
+  <link href="css/theme1.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="breadcrumb">
-    <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
-      <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
-    <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
-  </div>
+  <div class="container">
+    <div>
+      <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
+        <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
+      <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+    </div>
 
-  <div class="breadcrumb">
-    <a href="index.html">API</a>
-    <h1>HTMLSelectElement</h1>
-  </div>
-
-
-  <article id="val">
-    <h2>val</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="setNoChanges">
-    <h2>setNoChanges</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
+    <div class="breadcrumb">
+      <a href="index.html">API</a>
+      <h1>HTMLSelectElement</h1>
+    </div>
 
 
-  <article id="isModified">
-    <h2>isModified</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
+    <article id="val">
+      <h2>val</h2>
+      <div class="signature">
+        <p>.val( [<i>value</i>] )</p>
+      </div>
+      <div class="arg">
+        <p><i>value</i>If Specified, set the input to the value or return the value or the input
+      </div>
+      <div class="description">
+        <p>set the input to the value or return the value or the input</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <select id="e1">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3" selected="selected">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
 
-  <article id="fill">
-    <h2>fill</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
+        <script>
+          var el = qsi("el");
+          var ret = el.val(); // 3
 
-  <article id="load">
-    <h2>load</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
+          el.val("4");
+          ret = el.val(); // 4
+        </script>
+      </xmp>
+    </article>
 
+    <article id="setNoChanges">
+      <h2>setNoChanges</h2>
+      <div class="signature">
+        <p>.setNoChanges()</p>
+      </div>
+      <div class="description">
+        <p>Indicate that the select element is not modified</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <select id="e1">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3" selected="selected">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <script>
+          var el = qsi("el");
+          el.setNoChanges();
+        </script>
+      </xmp>
+    </article>
+
+
+    <article id="isModified">
+      <h2>isModified</h2>
+      <div class="signature">
+        <p>.isModified()</p>
+      </div>
+      <div class="description">
+        <p>Indicate if the select element is modified or not</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <select id="e1">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3" selected="selected">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <script>
+          var el = qsi("el");
+          var ret = el.isModified();
+        </script>
+      </xmp>
+    </article>
+
+    <article id="fill">
+      <h2>fill</h2>
+      <div class="signature">
+        <p>.fill(<i>data</i>, <i>keyName</i>,<i>valueName</i>, <i>linkData)</i></p>
+      </div>
+      <div class="arg">
+        <p><i>data</i> array of objects</p>
+        <p><i>keyName</i>name of property for the key of each option</p>
+        <p><i>valueName</i>name of property value for value of each option/p>
+          <p><i>linkData</i>boolean indicate if full objet is attach to the option</p>
+      </div>
+
+      <div class="description">
+        <p>Fill the select with data</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <select id="e1">
+            <option value="1">1</option>
+           </select>
+
+        <script>
+          qsi("el").fill([{
+              k: 1,
+              v: "one"
+            }, {
+              k: 2,
+              v: "two"
+            }, {
+              k: 3,
+              v: "three"
+            }, ],
+            "k", "v", false
+          );
+        </script>
+      </xmp>
+    </article>
 </body>
 
 </html>

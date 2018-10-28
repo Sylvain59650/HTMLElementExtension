@@ -50,8 +50,8 @@ The lastest version of this document is available on [Github > HTMLElementExtens
  **Note Deprecated: on & off functions will be moved in the module [htmlelement-events-extension](https://www.npmjs.com/package/htmlelement-events-extension)**
 
 ## HTMLTextareaElement
-    - insertAtCaret
     - val
+    - insertAtCaret
     - setNoChanges
     - isModified
 
@@ -60,12 +60,12 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - setInputs
   
 ## HTMLInputElement
+    - val
     - toTextBox
     - toPasswordBox
     - togglePassword
     - setNoChanges
     - isModified
-    - val
 
 ## HTMLSelectElement
     - val

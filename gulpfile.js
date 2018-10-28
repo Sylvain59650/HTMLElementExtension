@@ -51,9 +51,9 @@ gulp.task("demo", () => {
     .pipe(concat("htmlElement.min.js"))
     .pipe(babel({
       presets: ["es2015"],
-      compact: true,
+      compact: false,
       comments: false,
-      minified: true
+      minified: false
     }))
     .pipe(gulp.dest(chemins.demo))
 });

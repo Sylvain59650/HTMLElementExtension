@@ -2,79 +2,219 @@
 
 <head>
   <title>htmlElement-extension</title>
-  <link href="https://sylvain59650.github.io/demonstrator/css/demo.css" type="text/css" rel="stylesheet" />
-  <link href="https://sylvain59650.github.io/demonstrator/css/style.css" type="text/css" rel="stylesheet" />
+  <link href="css/theme1.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="breadcrumb">
-    <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
-      <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
-    <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+  <div class="container">
+    <div>
+      <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
+        <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
+      <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+    </div>
+
+
+    <div class="breadcrumb">
+      <a href="index.html">API</a>
+      <h1>NodeList</h1>
+    </div>
+
+
+    <nav>
+      <li><a href="#forEach">forEach</a></li>
+      <li><a href="#addClass">addClass</a></li>
+      <li><a href="#removeClass">removeClass</a></li>
+      <li><a href="#toggleClass">toggleClass</a></li>
+      <li><a href="#class">class</a></li>
+      <li><a href="#css">css</a></li>
+      <li><a href="#show">show</a></li>
+      <li><a href="#remove">remove</a></li>
+    </nav>
+
+    <article id="forEach">
+      <h2>forEach</h2>
+      <div class="signature">.forEach(<i>fn</i>)</div>
+      <div class="arg">
+        <p><i>fn</i>a function with 3 arguments : (element, index, the collection)</p>
+      </div>
+      <div class="description">
+        <p>Iterate over the collection, executing a function for each matched element.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div class="cl">1</div>
+        <div class="cl">2</div>
+        <span class="cl">3</span>
+
+        <script>
+          qs(".cl").forEach(function(elem, index, coll) {
+            elem.attr("data-index", index);
+          });
+        </script>
+      </xmp>
+    </article>
+
+    <article id="addClass">
+      <h2>addClass</h2>
+      <div class="signature">
+        <p>.addClass( <i>className</i> )</p>
+      </div>
+      <div class="arg">
+        <p><i>className</i>One or more space-separated classes to be added to the class attribute of each item of the collection.</p>
+      </div>
+      <div class="description">
+        <p>Adds the specified class(es) of each item of the collection.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div class="cl">1</div>
+        <div class="cl">2</div>
+        <span class="cl">3</span>
+
+        <script>
+          qs(".cl").addClass("red");
+        </script>
+      </xmp>
+    </article>
+
+    <article id="removeClass">
+      <h2>removeClass</h2>
+      <div class="signature">
+        <p>.removeClass(<i>className</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>className</i> : One or more space-separated classes to be removed from each item of the collection.</p>
+      </div>
+      <div class="description">
+        <p>Remove a single class, multiple classes, or all classes from each item of the collection.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div class="cl red">1</div>
+        <div class="cl">2</div>
+        <span class="cl red">3</span>
+
+        <script>
+          qs(".cl").removeClass("red");
+        </script>
+      </xmp>
+    </article>
+
+    <article id="toggleClass">
+      <h2>toggleClass</h2>
+      <div class="signature">
+        <p>.toggleClass(<i>classNames</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>classNames</i></p>
+      </div>
+      <div class="description">
+        <p>Add or remove one or more classes from each element of the collection, depending on either the class’s presence or the value of the state argument.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div class="cl red">1</div>
+        <div class="cl">2</div>
+        <span class="cl red">3</span>
+
+        <script>
+          qs(".cl").toggleClass("red");
+        </script>
+      </xmp>
+    </article>
+
+    <article id="class">
+      <h2>class</h2>
+      <div class="signature">
+        <p>.class(<i>classNames</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>classNames</i></p>
+      </div>
+      <div class="description">Add or remove one or more classes from the element. Remove class if the className begins with '-' otherwise add</div>
+      <p class="example"></p>
+      <xmp>
+        <div class="cl red">1</div>
+        <div class="cl">2</div>
+        <span class="cl red">3</span>
+
+        <script>
+          qs(".cl").class("-red green");
+        </script>
+      </xmp>
+    </article>
+
+    <article id="css">
+      <h2>css</h2>
+      <div class="signature">
+        <p>.css(<i>jsonObject</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>jsonObject</i></p>
+      </div>
+      <div class="description">
+        <p>Return the css properties or set the css properties.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div class="cl red">1</div>
+        <div class="cl">2</div>
+        <span class="cl red">3</span>
+
+        <script>
+          qs(".cl .red").css({
+            "background-color": "yellow",
+            border: "dotted 1px green",
+            margin: "10px"
+          });
+        </script>
+      </xmp>
+    </article>
+
+    <article id="show">
+      <h2>show</h2>
+      <div class="signature">
+        <p>.show(<i>visible</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>visible</i>boolean indicate if show or hide</p>
+      </div>
+      <div class="description">
+        <p>Display the element.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div class="cl red">1</div>
+        <div class="cl">2</div>
+        <span class="cl red">3</span>
+
+        <script>
+          qs(".cl").show(true);
+        </script>
+      </xmp>
+    </article>
+
+
+    <article id="remove">
+      <h2>remove</h2>
+      <div class="signature">
+        <p>.remove()</p>
+      </div>
+      <div class="description">
+        <p>Remove each element of the collection</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div class="cl red">1</div>
+        <div class="cl">2</div>
+        <span class="cl red">3</span>
+
+        <script>
+          qs(".cl").remove();
+        </script>
+      </xmp>
+    </article>
   </div>
-
-  <div class="breadcrumb">
-    <a href="index.html">API</a>
-    <h1>NodeList</h1>
-  </div>
-
-
-  <article id="forEach">
-    <h2>forEach</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="addClass">
-    <h2>addClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="removeClass">
-    <h2>removeClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="toggleClass">
-    <h2>toggleClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="toggleClass">
-    <h2>toggleClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="toggleClass">
-    <h2>toggleClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="css">
-    <h2>css</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="show">
-    <h2>show</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
 </body>
 
 </html>

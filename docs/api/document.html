@@ -2,67 +2,112 @@
 
 <head>
   <title>htmlElement-extension</title>
-  <link href="https://sylvain59650.github.io/demonstrator/css/demo.css" type="text/css" rel="stylesheet" />
-  <link href="https://sylvain59650.github.io/demonstrator/css/style.css" type="text/css" rel="stylesheet" />
+  <link href="css/theme1.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="breadcrumb">
-    <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
-      <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
-    <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+  <div class="container">
+    <div>
+      <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
+        <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
+      <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+    </div>
+
+    <div class="breadcrumb">
+      <a href="index.html">API</a>
+      <h1>document</h1>
+    </div>
+
+    <article id="ready">
+      <h2>ready</h2>
+      <div class="signature">
+        <p>document.ready(<i>fn</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>fn</i>function to call when DOM is loaded</p>
+      </div>
+      <div class="description">
+        <p>callback called when DOM is loaded</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        document.ready(function(){ console.log("DOM loaded"); }
+      </xmp>
+    </article>
+
+    <article id="getJSON">
+      <h2>getJSON</h2>
+      <div class="signature">document.getJSON(<i>url</i>, <i>onSuccess</i> [, <i>onError</i>, <i>options</i>])</div>
+      <div class="arg">
+        <p><i>url</i>A string containing the URL to which the request is sent.</p>
+        <p><i>onSuccess</i>A callback function that is executed if the request succeeds.</p>
+        <p><i>onError</i>A callback function that is executed if the request occurs errors.</p>
+        <p><i>options</i>options</p>
+      </div>
+      <div class="description">
+        <p>Load JSON-encoded data from the server using a GET HTTP request.</p>
+        <span>Work only on server</span></div>
+      <p class="example"></p>
+      <xmp></xmp>
+    </article>
+
+    <article id="ajax">
+      <h2>ajax</h2>
+      <div class="signature">document.ajax(<i>url</i>, <i>onSuccess</i> [, <i>onError</i>, <i>options</i>])</div>
+      <div class="arg">
+        <p><i>url</i>A string containing the URL to which the request is sent.</p>
+        <p><i>onSuccess</i>A callback function that is executed if the request succeeds.</p>
+        <p><i>onError</i>A callback function that is executed if the request occurs errors.</p>
+        <p><i>options</i>options</p>
+      </div>
+      <div class="description">
+        <p>Load data from the server using a GET HTTP request.</p>
+      </div>
+      <p class="example"></p>
+      <xmp></xmp>
+    </article>
+
+    <article id="getScripts">
+      <h2>getScripts</h2>
+      <div class="signature">document.getScripts(<i>arrScriptsUrl</i>)</div>
+      <div class="arg">
+        <p><i>arrScriptsUrl</i>array of scripts urls</p>
+      </div>
+      <div class="description">
+        <p>Load javascript resources in the document</p>
+      </div>
+      <p class="example"></p>
+      <xmp></xmp>
+    </article>
+
+    <article id="getScriptsIf">
+      <h2>getScriptsIf</h2>
+      <div class="signature">document.getScriptsIf(<i>condition</i>,<i>arrScriptsUrl</i>)</div>
+      <div class="arg">
+        <p><i>condition</i>a boolean</p>
+        <p><i>arrScriptsUrl</i>array of scripts urls</p>
+      </div>
+      <div class="description">
+        <p>Load javascript resources in the document if the condition is true</p>
+      </div>
+      <p class="example"></p>
+      <xmp></xmp>
+    </article>
+
+    <article id="getStyles">
+      <h2>getStyles</h2>
+      <div class="signature">document.getStyles(<i>arrStylesUrl</i>)</div>
+      <div class="arg">
+        <p><i>arrStylesUrl</i>array of css urls</p>
+      </div>
+      <div class="description">
+        <p>Load css resources in the document</p>
+      </div>
+      <p class="example"></p>
+      <xmp></xmp>
+    </article>
+
   </div>
-
-  <div class="breadcrumb">
-    <a href="index.html">API</a>
-    <h1>document</h1>
-  </div>
-
-  <article id="ready">
-    <h2>ready</h2>
-    <div class="description">callback called when DOM is loaded</div>
-    <p class="signature">
-
-    </p>
-    <code>document.ready(function(){ console.log("DOM loaded"); }</code>
-  </article>
-
-  <article id="getJSON">
-    <h2>getJSON</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="ajax">
-    <h2>ajax</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="getScripts">
-    <h2>getScripts</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="getScriptsIf">
-    <h2>getScriptsIf</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="getStyles">
-    <h2>getStyles</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-
 </body>
 
 </html>

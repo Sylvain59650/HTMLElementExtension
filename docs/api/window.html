@@ -1,0 +1,178 @@
+<html>
+
+<head>
+  <title>htmlElement-extension</title>
+  <link href="css/theme1.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
+        <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
+      <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+    </div>
+
+
+    <div class="breadcrumb">
+      <a href="index.html">API</a>
+      <h1>window</h1>
+    </div>
+
+
+    <article id="newElement">
+      <h2>newElement</h2>
+      <div class="signature">
+        <p>.newElement(<i>tagName</i>, [<i>attributes</i>, <i>htmlContent</i>, <i>events</i>, <i>css</i>])</p>
+      </div>
+      <div class="arg">
+        <p><i>tagName</i>an html tag without the brackets, like "div", "span", "input", "form",...</p>
+        <p><i>attributes</i>jsonObject contains attributes for the element</p>
+        <p><i>htmlContent</i>htmlString for the content of the element</p>
+        <p><i>events</i>jsonObject with events to associate to the element </p>
+        <p><i>css</i>jsonObject with the css attributes of the element</p>
+      </div>
+      <div class="description">
+        <p>create a new HTMLElement with the specifieds parameters</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        var el = newElement("div", { id: id, class: "cl1" }, "i'm here", { click: clickOnMe, mouseover: mouseOverMe },{border:solid 1px gray,color:'white'}");
+      </xmp>
+    </article>
+
+    <article id="qs">
+      <h2>qs</h2>
+      <div class="signature">
+        <p>qs(<i>selectors</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>selectors</i></p>
+      </div>
+      <div class="description">
+        <p>Return the first element that match selectors</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div class="c1">1</div>
+        <div class="c1">2</div>
+
+        <script>
+          var el = qs(".c1");
+
+          console.log(el.text()); //1
+        </script>
+      </xmp>
+    </article>
+
+    <article id="qsi">
+      <h2>qsi</h2>
+      <div class="signature">
+        <p>qsi(<i>htmlid</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlid</i></p>
+      </div>
+      <div class="description">
+        <p>Return the first element that match selectors with #id=htmlid</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="id1" class="c1">1</div>
+        <div id="id2" class="c1">2</div>
+
+        <script>
+          var el = qsi("id2");
+
+          console.log(el.text()); //1
+        </script>
+      </xmp>
+    </article>
+
+
+    <article id="qsa">
+      <h2>qsa</h2>
+      <div class="signature">
+        <p>qsa(<i>selectors</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>selectors</i></p>
+      </div>
+      <div class="description">
+        <p>returns all elements within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="cl">
+          <span class="aze">Hello</span>
+          <span class="aze">World</span>
+        </div>
+
+        <script>
+          var el = qsa("[class:'aze']");
+
+          console.log(el.text()); // Hello World
+        </script>
+      </xmp>
+    </article>
+
+
+
+    <article id="qsn">
+      <h2>qsn</h2>
+      <div class="signature">
+        <p>qsn(<i>intputName</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>intputName</i></p>
+      </div>
+      <div class="description">
+        <p>returns the first Element within the document that have the specified name. If no matches are found, null is returned.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="cl">
+          <input type="text" id="id1" name="t1" value="1" />
+          <input type="text" id="id2" name="t2" value="2" />
+          <input type="text" id="id3" name="t3" value="3" />
+        </div>
+
+        <script>
+          var el = qsn("t2");
+
+          console.log(el.val()); // 2
+        </script>
+      </xmp>
+    </article>
+
+    <article id="qsnames">
+      <h2>qsnames</h2>
+      <div class="signature">
+        <p>.qsnames(<i>selectors</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>selectors</i></p>
+      </div>
+      <div class="description">
+        <p>returns all Elements within the document that matches the specified name. If no matches are found, null is returned.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="cl">
+          <input type="text" id="id1" name="t" value="1" />
+          <input type="text" id="id2" name="t" value="2" />
+          <input type="text" id="id3" name="t" value="3" />
+        </div>
+
+        <script>
+          var el = qsnames("t");
+
+          console.log(el.text); // 123
+        </script>
+      </xmp>
+    </article>
+
+  </div>
+</body>
+
+</html>

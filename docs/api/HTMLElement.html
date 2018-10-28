@@ -2,274 +2,827 @@
 
 <head>
   <title>htmlElement-extension</title>
-  <link href="https://sylvain59650.github.io/demonstrator/css/demo.css" type="text/css" rel="stylesheet" />
-  <link href="https://sylvain59650.github.io/demonstrator/css/style.css" type="text/css" rel="stylesheet" />
+  <link href="css/theme1.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="breadcrumb">
-    <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
-      <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
-    <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+  <div class="container">
+    <div>
+      <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
+        <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
+      <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+    </div>
+
+    <div class="breadcrumb">
+      <a href="index.html">API</a>
+      <h1>HTMLElement</h1>
+    </div>
+
+    <nav>
+      <li><span>Attributes</span>
+        <nav>
+          <li><a href="#addClass">addClass</a></li>
+          <li><a href="#attr">attr</a></li>
+          <li><a href="#attrs">attrs</a></li>
+          <li><a href="#class">class</a></li>
+          <li><a href="#css">css</a></li>
+          <li><a href="#hasClass">hasClass</a></li>
+          <li><a href="#removeClass">removeClass</a></li>
+          <li><a href="#toggleClass">toggleClass</a></li>
+        </nav>
+      </li>
+      <li><span>Insertion</span>
+        <nav>
+          <li><a href="#beforeBeginHTML">beforeBeginHTML</a></li>
+          <li><a href="#afterBeginHTML">afterBeginHTML</a></li>
+          <li><a href="#beforeEndHTML">beforeEndHTML</a></li>
+          <li><a href="#afterEndHTML">afterEndHTML</a></li>
+          <li><a href="#beforeBegin">beforeBegin</a></li>
+          <li><a href="#afterBegin">afterBegin</a></li>
+          <li><a href="#beforeEnd">beforeEnd</a></li>
+          <li><a href="#afterEnd">afterEnd</a></li>
+        </nav>
+      </li>
+      <li><span>Visibility</span>
+        <nav>
+          <li><a href="#isVisible">isVisible</a></li>
+          <li><a href="#show">show</a></li>
+          <li><a href="#toggleVisible">toggleVisible</a></li>
+        </nav>
+      </li>
+      <li><span>Content</span>
+        <nav>
+          <li><a href="#html">html</a></li>
+          <li><a href="#text">text</a></li>
+          <li><a href="#outerHtml">outerHtml</a></li>
+        </nav>
+      </li>
+      <li><span>Placement</span>
+        <nav>
+          <li><a href="#offset">offset</a></li>
+          <li><a href="#outerHeight">outerHeight</a></li>
+          <li><a href="#outerWidth">outerWidth</a></li>
+          <li><a href="#parent">parent</a></li>
+        </nav>
+      </li>
+
+
+      <li><span>Selectors</span>
+        <nav>
+          <li><a href="#qs">qs</a></li>
+          <li><a href="#qsa">qsa</a></li>
+          <li><a href="#qsn">qsn</a></li>
+          <li><a href="#qsnames">qsnames</a></li>
+        </nav>
+      </li>
+      <li><span>Others</span>
+        <nav>
+          <li><a href="#contains">contains</a></li>
+        </nav>
+      </li>
+    </nav>
+
+
+
+
+    <article id="addClass">
+      <h2>addClass</h2>
+      <div class="signature">
+        <p>.addClass( <i>className</i> )</p>
+      </div>
+      <div class="arg">
+        <p><i>className</i>One or more space-separated classes to be added to the class attribute of the element.</p>
+      </div>
+      <div class="description">
+        <p>Adds the specified class(es) to the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1"></div>
+
+        <script>
+          qsi("d1").addClass("selected red");
+        </script>
+      </xmp>
+    </article>
+
+    <article id="removeClass">
+      <h2>removeClass</h2>
+      <div class="signature">
+        <p>.removeClass(<i>className</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>className</i> : One or more space-separated classes to be removed from the class attribute of the element.</p>
+      </div>
+      <div class="description">
+        <p>Remove a single class, multiple classes, or all classes from the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="selected red"></div>
+
+        <script>
+          qsi("d1").removeClass("red");
+        </script>
+      </xmp>
+    </article>
+
+    <article id="toggleClass">
+      <h2>toggleClass</h2>
+      <div class="signature">
+        <p>.toggleClass(<i>classNames</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>classNames</i></p>
+      </div>
+      <div class="description">
+        <p>Add or remove one or more classes from the element, depending on either the class’s presence or the value of the state argument.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="selected red"></div>
+
+        <script>
+          qsi("d1").toggleClass("red");
+        </script>
+      </xmp>
+    </article>
+
+    <article id="class">
+      <h2>class</h2>
+      <div class="signature">
+        <p>.class(<i>classNames</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>classNames</i></p>
+      </div>
+      <div class="description">Add or remove one or more classes from the element. Remove class if the className begins with '-' otherwise add</div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="selected red"></div>
+
+        <script>
+          qsi("d1").class("-red green");
+        </script>
+      </xmp>
+    </article>
+
+    <article id="hasClass">
+      <h2>hasClass</h2>
+      <div class="signature">
+        <p>.hasClass(<i>className</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>className</i></p>
+      </div>
+      <div class="description">
+        <p>Determine whether any of the matched elements are assigned the given class.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="selected red"></div>
+
+        <script>
+          var has = qsi("d1").hasClass("red");
+          console.log(has); // true
+        </script>
+      </xmp>
+    </article>
+
+    <article id="css">
+      <h2>css</h2>
+      <div class="signature">
+        <p>.css(<i>jsonObject</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>jsonObject</i></p>
+      </div>
+      <div class="description">
+        <p>Return the css properties or set the css properties.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="selected red" style="background-color:blue;border:solid 1px gray;color:beige"></div>
+
+        <script>
+          var d1 = qsi("d1");
+          d1.css({
+            "background-color": "yellow",
+            border: "dotted 1px green",
+            margin: "10px"
+          });
+
+          console.log(d1.css()); // {"background-color":"yellow",border:"dotted 1px green",margin:"10px",color:beige}
+        </script>
+      </xmp>
+    </article>
+
+    <article id="beforeBeginHTML">
+      <h2>beforeBeginHTML</h2>
+      <div class="signature">
+        <p>.beforeBeginHTML(<i>htmlString</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlString</i></p>
+      </div>
+      <div class="description">
+        <p>Insert html string, specified by the parameter, before the beginning of the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1"><span>Martin</span></div>
+
+        <script>
+          var d1 = qsi("d1");
+          d1.beforeBeginHTML("<p>Hello</p>");
+
+          console.log(d1.outerHtml()); // <p>Hello</p><div id="d1"><span>Martin</span></div>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="afterBeginHTML">
+      <h2>afterBeginHTML</h2>
+      <div class="signature">
+        <p>.afterBeginHTML(<i>htmlString</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlString</i></p>
+      </div>
+      <div class="description">
+        <p>Insert html string, specified by the parameter, after the beginning of the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1"><span>Martin</span></div>
+
+        <script>
+          var d1 = qsi("d1");
+          d1.afterBeginHTML("<p>Hello</p>");
+
+          console.log(d1.outerHtml()); // <div id="d1"><p>Hello</p><span>Martin</span></div>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="beforeEndHTML">
+      <h2>beforeEndHTML</h2>
+      <div class="signature">
+        <p>.beforeEndHTML(<i>htmlString</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlString</i></p>
+      </div>
+      <div class="description">
+        <p>Insert html string, specified by the parameter, before the end of the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1"><span>Martin</span></div>
+
+        <script>
+          var d1 = qsi("d1");
+          d1.beforeEndHTML("<p>Hello</p>");
+
+          console.log(d1.outerHtml()); // <div id="d1"><span>Martin</span><p>Hello</p></div>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="afterEndHTML">
+      <h2>afterEndHTML</h2>
+      <div class="signature">
+        <p>.afterEndHTML(<i>htmlString</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlString</i></p>
+      </div>
+      <div class="description">
+        <p>Insert html string, specified by the parameter, after the end of the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1"><span>Martin</span></div>
+
+        <script>
+          var d1 = qsi("d1");
+          d1.afterEndHTML("<p>Hello</p>");
+
+          console.log(d1.outerHtml()); // <div id="d1"><span>Martin</span></div><p>Hello</p>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="beforeBegin">
+      <h2>beforeBegin</h2>
+      <div class="signature">
+        <p>.beforeBegin(<i>htmlElement</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlElement</i></p>
+      </div>
+      <div class="description">
+        <p>Insert the element, specified by the parameter, before the beginning of the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="container">
+          <div id="d1"><span>Martin</span></div>
+          <input id="i2" />
+        </div>
+
+        <script>
+          var container = qsi("container");
+          var d1 = qsi("d1");
+          var i2 = qsi("i2");
+          d1.beforeBegin(i2);
+
+          console.log(container.html()); // <input id="i2" /><div id="d1"><span>Martin</span></div>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="afterBegin">
+      <h2>afterBegin</h2>
+      <div class="signature">
+        <p>.afterBegin(<i>htmlElement</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlElement</i></p>
+      </div>
+      <div class="description">
+        <p>Insert the element, specified by the parameter, after the beginning of the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="container">
+          <div id="d1"><span>Martin</span></div>
+          <input id="i2" />
+        </div>
+
+        <script>
+          var container = qsi("container");
+          var d1 = qsi("d1");
+          var i2 = qsi("i2");
+          d1.afterBegin(i2);
+
+          console.log(container.html()); // <div id="d1"><input id="i2" /><span>Martin</span></div>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="beforeEnd">
+      <h2>beforeEnd</h2>
+      <div class="signature">
+        <p>.beforeEnd(<i>htmlElement</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlElement</i></p>
+      </div>
+      <div class="description">
+        <p>Insert the element, specified by the parameter, before the end of the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="container">
+          <div id="d1"><span>Martin</span></div>
+          <input id="i2" />
+        </div>
+
+        <script>
+          var container = qsi("container");
+          var d1 = qsi("d1");
+          var i2 = qsi("i2");
+          d1.beforeEnd(i2);
+
+          console.log(container.html()); // <div id="d1"><span>Martin</span><input id="i2" /></div>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="afterEnd">
+      <h2>afterEnd</h2>
+      <div class="signature">
+        <p>.afterEnd(<i>htmlElement</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlElement</i></p>
+      </div>
+      <div class="description">
+        <p>Insert the element, specified by the parameter, after the end of the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="container">
+          <div id="d1"><span>Martin</span></div>
+          <input id="i2" />
+        </div>
+
+        <script>
+          var container = qsi("container");
+          var d1 = qsi("d1");
+          var i2 = qsi("i2");
+          d1.afterEnd(i2);
+
+          console.log(container.html()); // <div id="d1"><span>Martin</span></div><input id="i2" />
+        </script>
+      </xmp>
+    </article>
+
+    <article id="outerHeight">
+      <h2>outerHeight</h2>
+      <div class="signature">
+        <p>.outerHeight()</p>
+      </div>
+      <div class="description">
+        <p>Get the current computed outer height (including padding, border, and optionally margin) for the element in the set of matched elements</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <style>
+          p {
+            margin: 10px;
+            padding: 5px;
+            border: 2px solid #666;
+          }
+        </style>
+        <p id="p1">Hello</p>
+
+        <script>
+          var p = qsi("p1");
+          console.log(p.outerHeight());
+        </script>
+      </xmp>
+    </article>
+
+    <article id="outerWidth">
+      <h2>outerWidth</h2>
+      <div class="signature">
+        <p>.outerWidth()</p>
+      </div>
+
+      <div class="description">
+        <p>Get the current computed outer width (including padding, border, and optionally margin) for the element.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <style>
+          p {
+            margin: 10px;
+            padding: 5px;
+            border: 2px solid #666;
+          }
+        </style>
+        <p id="p1">Hello</p>
+
+        <script>
+          var p = qsi("p1");
+          console.log(p.outerWidth());
+        </script>
+      </xmp>
+    </article>
+
+    <article id="show">
+      <h2>show</h2>
+      <div class="signature">
+        <p>.show(<i>visible</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>visible</i>boolean indicate if show or hide</p>
+      </div>
+      <div class="description">
+        <p>Display or hide the element.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" style="display:none"></div>
+
+        <script>
+          qsi("d1").show(true);
+        </script>
+      </xmp>
+    </article>
+
+    <article id="isVisible">
+      <h2>isVisible</h2>
+      <div class="signature">
+        <p>.isVisible()</p>
+      </div>
+      <div class="description">
+        <p>Indicate if the element is visible or not</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" style="display:none"></div>
+
+        <script>
+          console.log(qsi("d1").isVisible()); // false
+        </script>
+      </xmp>
+    </article>
+
+    <article id="toggleVisible">
+      <h2>toggleVisible</h2>
+      <div class="signature">
+        <p>.toggleVisible()</p>
+      </div>
+      <div class="description">
+        <p>Toggle visibility of the element</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" style="display:none"></div>
+
+        <script>
+          qsi("d1").toggleVisible();
+          console.log(qsi("d1").isVisible()); // true
+
+          qsi("d1").toggleVisible();
+          console.log(qsi("d1").isVisible()); // false
+        </script>
+      </xmp>
+    </article>
+
+    <article id="html">
+      <h2>html</h2>
+      <div class="signature">
+        <p>.html(<i>htmlString</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>htmlString</i> if specified, set the inner HTML of the element with it, else return the inner HTML </p>
+      </div>
+      <div class="description">
+        <p>Get the inner HTML contents of the element or set the inner HTML contents of the element.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1">
+          <p>Hello Martin</p>
+        </div>
+
+        <script>
+          var d1 = qsi("d1");
+
+          console.log(d1.html()); // <p>Hello Martin</p>
+
+          d1.html("<span>Bye John</span>");
+          console.log(d1.html()); // <span>Bye John</p>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="text">
+      <h2>text</h2>
+      <div class="signature">
+        <p>.text(<i>str</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>str</i>if specified, set the inner text of the element with it, else return the text of the element </p>
+      </div>
+      <div class="description">
+        <p>Get the combined text contents of the element, including their descendants</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1">
+          <p>Hello Martin</p>
+        </div>
+
+        <script>
+          var d1 = qsi("d1");
+
+          console.log(d1.text()); // Hello Martin
+
+          d1.text("Bye John");
+          console.log(d1.text()); // Bye John
+        </script>
+      </xmp>
+    </article>
+
+    <article id="parent">
+      <h2>parent</h2>
+      <div class="signature">
+        <p>.parent()</p>
+      </div>
+      <div class="description">
+        <p>Get the parent of the element.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="container">
+          <div id="d1">
+            <p>Hello Martin</p>
+          </div>
+        </div>
+
+        <script>
+          var d1 = qsi("d1");
+          var p = d1.parent();
+
+          console.log(p.outerHtml());
+          // <div id="container">
+          //<div id="d1"><p>Hello Martin</p></div>
+          // </div>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="outerHtml">
+      <h2>outerHtml</h2>
+      <div class="signature">
+        <p>.outerHtml()</p>
+      </div>
+      <div class="description"></div>
+      <p class="example"></p>
+      <xmp>
+        <div id="container">
+          <div id="d1">
+            <p>Hello Martin</p>
+          </div>
+        </div>
+
+        <script>
+          var container = qsi("container");
+
+          console.log(container.outerHtml());
+          // <div id="container">
+          //<div id="d1"><p>Hello Martin</p></div>
+          // </div>
+        </script>
+      </xmp>
+    </article>
+
+    <article id="attr">
+      <h2>attr</h2>
+      <div class="signature">
+        <p>.attr(<i>attributeName</i>[,<i>attributeValue</i>])</p>
+      </div>
+      <div class="arg">
+        <p><i>attributeName</i></p>
+        <p><i>attributeValue</i></p>
+      </div>
+      <div class="description">
+        <p>Get the value of an attribute for the element or set one attribute for the element.</p>
+      </div>
+      <p class="example"></p>
+      <xmp></xmp>
+    </article>
+
+    <article id="attrs">
+      <h2>attrs</h2>
+      <div class="signature">
+        <p>.attrs()</p>
+      </div>
+      <div class="arg">
+        <p></p>
+      </div>
+      <div class="description">
+        <p>Get the list of attributes of the element.</p>
+      </div>
+      <p class="example"></p>
+      <xmp></xmp>
+    </article>
+
+    <article id="contains">
+      <h2>contains</h2>
+      <div class="signature">
+        <p>.contains(<i>elem</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>elem</i></p>
+      </div>
+      <div class="description"></div>
+      <p class="example"></p>
+      <xmp></xmp>
+    </article>
+
+
+    <article id="offset">
+      <h2>offset</h2>
+      <div class="signature">
+        <p>.offset()</p>
+      </div>
+      <div class="description">
+        <p>Get the current coordinates of the element.</p>
+      </div>
+      <p class="example"></p>
+      <xmp></xmp>
+    </article>
+
+    <article id="qs">
+      <h2>qs</h2>
+      <div class="signature">
+        <p>.qs(<i>selectors</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>selectors</i></p> execute the querySelector function with the specified argument relative to the element
+      </div>
+      <div class="description">
+        <p>returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="cl">
+          <span class="aze">Hello</span>
+          <span class="aze">World</span>
+        </div>
+
+        <script>
+          var d1 = qsi("d1");
+
+          var el = d1.qs("[class:'aze']");
+
+          console.log(el.text()); // Hello
+        </script>
+      </xmp>
+    </article>
+
+    <article id="qsa">
+      <h2>qsa</h2>
+      <div class="signature">
+        <p>.qsa(<i>selectors</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>selectors</i></p>
+      </div>
+      <div class="description">
+        <p>returns all elements within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="cl">
+          <span class="aze">Hello</span>
+          <span class="aze">World</span>
+        </div>
+
+        <script>
+          var d1 = qsi("d1");
+
+          var el = d1.qsa("[class:'aze']");
+
+          console.log(el.text()); // Hello World
+        </script>
+      </xmp>
+    </article>
+
+    <article id="qsn">
+      <h2>qsn</h2>
+      <div class="signature">
+        <p>.qsn(<i>selectors</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>selectors</i></p>
+      </div>
+      <div class="description">
+        <p>returns the first Element within the document that have the specified name. If no matches are found, null is returned.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="cl">
+          <input type="text" id="id1" name="t1" value="1" />
+          <input type="text" id="id2" name="t2" value="2" />
+          <input type="text" id="id3" name="t3" value="3" />
+        </div>
+
+        <script>
+          var d1 = qsi("d1");
+
+          var el = d1.qsn("t2");
+
+          console.log(el.val()); // 2
+        </script>
+      </xmp>
+    </article>
+
+    <article id="qsnames">
+      <h2>qsnames</h2>
+      <div class="signature">
+        <p>.qsnames(<i>selectors</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>selectors</i></p>
+      </div>
+      <div class="description">
+        <p>returns all Elements within the document that matches the specified name. If no matches are found, null is returned.</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="cl">
+          <input type="text" id="id1" name="t" value="1" />
+          <input type="text" id="id2" name="t" value="2" />
+          <input type="text" id="id3" name="t" value="3" />
+        </div>
+
+        <script>
+          var d1 = qsi("d1");
+
+          var el = d1.qsnames("t");
+
+          console.log(el.text); // 123
+        </script>
+      </xmp>
+    </article>
   </div>
-
-  <div class="breadcrumb">
-    <a href="index.html">API</a>
-    <h1>HTMLElement</h1>
-  </div>
-
-
-  <article id="addClass">
-    <h2>addClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="removeClass">
-    <h2>removeClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="toggleClass">
-    <h2>toggleClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="addClass">
-    <h2>addClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="class">
-    <h2>class</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="hasClass">
-    <h2>hasClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="css">
-    <h2>css</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="beforeBeginHTML">
-    <h2>beforeBeginHTML</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="afterBeginHTML">
-    <h2>afterBeginHTML</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="addClass">
-    <h2>addClass</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="beforeEndHTML">
-    <h2>beforeEndHTML</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="afterEndHTML">
-    <h2>afterEndHTML</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="beforeBegin">
-    <h2>beforeBegin</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="afterBegin">
-    <h2>afterBegin</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="beforeEnd">
-    <h2>beforeEnd</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="afterEnd">
-    <h2>afterEnd</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="outerHeight">
-    <h2>outerHeight</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="outerWidth">
-    <h2>outerWidth</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="show">
-    <h2>show</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="isVisible">
-    <h2>isVisible</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="toggleVisible">
-    <h2>toggleVisible</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="html">
-    <h2>html</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="text">
-    <h2>text</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="parent">
-    <h2>parent</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="outerHtml">
-    <h2>outerHtml</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="attr">
-    <h2>attr</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="attrs">
-    <h2>attrs</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="contains">
-    <h2>contains</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="contains">
-    <h2>contains</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="contains">
-    <h2>contains</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="contains">
-    <h2>contains</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="offset">
-    <h2>offset</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="qs">
-    <h2>qs</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="qsa">
-    <h2>qsa</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="qsn">
-    <h2>qsn</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="qsnames">
-    <h2>qsnames</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
 </body>
 
 </html>

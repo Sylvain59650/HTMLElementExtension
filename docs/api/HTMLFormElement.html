@@ -2,53 +2,123 @@
 
 <head>
   <title>htmlElement-extension</title>
-  <link href="https://sylvain59650.github.io/demonstrator/css/demo.css" type="text/css" rel="stylesheet" />
-  <link href="https://sylvain59650.github.io/demonstrator/css/style.css" type="text/css" rel="stylesheet" />
+  <link href="css/theme1.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="breadcrumb">
-    <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
-      <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
-    <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+  <div class="container">
+    <div>
+      <a href="https://www.npmjs.com/package/htmlElement-extension" title="NPM">
+        <img src="https://sylvain59650.github.io/demonstrator/img/npm.png" height="32"></a>
+      <a href="https://github.com/Sylvain59650/htmlElement-extension" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+    </div>
+
+    <div class="breadcrumb">
+      <a href="index.html">API</a><a href="HTMLElement.html">HTMLElement</a>
+      <h1>HTMLFormElement</h1>
+    </div>
+
+
+    <article id="val">
+      <h2>val</h2>
+      <div class="signature">
+        <p>.val()</p>
+      </div>
+      <div class="description">
+        <p>Return a json object with the differents inputs (key/value) contained in the form</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <form id="f1">
+          <input type="text" name="t1" />
+          <label><input type="checkbox" name="c1" value="456" checked="checked" />c1</label>
+          <label><input type="checkbox" name="c2" value="789" />c2</label>
+          <label></label><input type="radio" name="r1" value="1">1</label>
+          <label></label><input type="radio" name="r1" value="2" checked="checked">2</label>
+          <label></label><input type="radio" name="r1" value="3">3</label>
+          <textarea name="text1"></textarea>
+          <select name="s1"><option value="1">1</option><option value="2" selected="selected">2</option><option value="3">3</option></select>
+        </form>
+
+        <script>
+          var f1 = qsi("f1");
+          var values = f1.val();
+          // values= {t1:"",c1:"456",r1:"2",text1:"",s1:"2"}
+        </script>
+      </xmp>
+    </article>
+
+
+    <article id="setInputs">
+      <h2>setInputs</h2>
+      <div class="signature">
+        <p>.setInputs(<i>jsonObject</i>)</p>
+      </div>
+      <div class="arg">
+        <i>jsonObject</i>
+      </div>
+      <div class="description">
+        <p>Initialize the inputs of the form with (key/value) contains in the parameter</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <form id="f1">
+          <input type="text" name="t1" />
+          <label><input type="checkbox" name="c1" value="456" />c1</label>
+          <label><input type="checkbox" name="c2" value="789" />c2</label>
+          <label></label><input type="radio" name="r1" value="1">1</label>
+          <label></label><input type="radio" name="r1" value="2">2</label>
+          <label></label><input type="radio" name="r1" value="3">3</label>
+          <textarea name="text1"></textarea>
+          <select name="s1"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+          <select name="s2"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        </form>
+
+        <script>
+          var f1 = qsi("f1");
+          f1.setInputs({
+            t1: "toto",
+            c1: "123",
+            c2: "654",
+            r1: "2",
+            text1: "bla",
+            s1: "2",
+            s2: "3"
+          });
+        </script>
+      </xmp>
+    </article>
+
+
+    <article id="setNoChanges">
+      <h2>setNoChanges</h2>
+      <div class="signature">
+        <p>.setNoChanges()</p>
+      </div>
+      <div class="description">
+        <p>Indicate that all inputs elements in the form are not modified</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+
+      </xmp>
+    </article>
+
+    <article id="isModified">
+      <h2>isModified</h2>
+      <div class="signature">
+        <p>.isModified()</p>
+      </div>
+      <div class="description">
+        <p>Return true if the form contains at least one input modified</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+
+      </xmp>
+    </article>
+
   </div>
-
-  <div class="breadcrumb">
-    <a href="index.html">API</a>
-    <h1>HTMLButtonElement</h1>
-  </div>
-
-
-  <article id="val">
-    <h2>val</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-
-  <article id="setInputs">
-    <h2>setInputs</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-
-  <article id="setNoChanges">
-    <h2>setNoChanges</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
-  <article id="isModified">
-    <h2>isModified</h2>
-    <div class="description"></div>
-    <p class="example"></p>
-    <code></code>
-  </article>
-
 
 </body>
 

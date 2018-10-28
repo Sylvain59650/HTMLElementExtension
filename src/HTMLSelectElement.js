@@ -1,4 +1,7 @@
 HTMLSelectElement.prototype.val = function() {
+  if (!!this.value) {
+    return this.value;
+  }
   var value = "";
   for (var opt of this.selectedOptions) {
     value += opt.value + ",";
