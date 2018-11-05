@@ -45,6 +45,8 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - after
     - append
     - prepend
+    - val
+    - remove
     - qs   ~ querySelector
     - qsa  ~ querySelectorAll
 

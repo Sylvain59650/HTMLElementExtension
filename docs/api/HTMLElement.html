@@ -29,6 +29,7 @@
           <li><a href="#hasClass">hasClass</a></li>
           <li><a href="#removeClass">removeClass</a></li>
           <li><a href="#toggleClass">toggleClass</a></li>
+          <li><a href="#val">val</a></li>
         </nav>
       </li>
       <li><span>Insertion</span>
@@ -41,6 +42,7 @@
           <li><a href="#afterBegin">afterBegin</a></li>
           <li><a href="#beforeEnd">beforeEnd</a></li>
           <li><a href="#afterEnd">afterEnd</a></li>
+          <li><a href="#remove">remove</a></li>
         </nav>
       </li>
       <li><span>Visibility</span>
@@ -144,6 +146,47 @@
 
         <script>
           qsi("d1").toggleClass("red");
+        </script>
+      </xmp>
+    </article>
+
+    <article id="remove">
+      <h2>remove</h2>
+      <div class="signature">
+        <p>.remove()</p>
+      </div>
+
+      <div class="description">
+        <p>remove the element from DOM (polyfill for IE).</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="selected red"></div>
+
+        <script>
+          qsi("d1").remove();
+        </script>
+      </xmp>
+    </article>
+
+    <article id="val">
+      <h2>val</h2>
+      <div class="signature">
+        <p>.val(<i>str</i>)</p>
+      </div>
+      <div class="arg">
+        <p><i>str</i>value to set to the element</p>
+      </div>
+      <div class="description">
+        <p>if str is provided, add a attribute called value and set the value to str else return the value of the attribute 'value'</p>
+      </div>
+      <p class="example"></p>
+      <xmp>
+        <div id="d1" class="selected red"></div>
+
+        <script>
+          qsi("d1").val("5");
+          console.log(qsi("d1")); // "5"
         </script>
       </xmp>
     </article>

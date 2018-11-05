@@ -126,8 +126,10 @@ HTMLElement.prototype.html = function(st) {
   return this;
 }
 
-HTMLElement.prototype.text = function() {
-  return this.textContent;
+HTMLElement.prototype.text = function(st) {
+  if (arguments.length === 0) { return this.textContent; }
+  this.textContent = st;
+  return this;
 }
 
 HTMLElement.prototype.parent = function() {
@@ -150,6 +152,13 @@ HTMLElement.prototype.attr = function(name, value) {
   }
 }
 
+HTMLElement.prototype.val = function(value) {
+  if (arguments.length === 1) {
+    this.setAttribute("value", value);
+  } else {
+    return this.getAttribute("value");
+  }
+}
 
 HTMLElement.prototype.attrs = function(attributes) {
   if (arguments.length === 1) {
@@ -170,6 +179,14 @@ HTMLElement.prototype.contains = function(item) {
     return (it === this);
   }
   return false;
+}
+
+if (!Element.prototype.remove) {
+  Element.prototype.remove = function() {
+    if (this.parentNode) {
+      this.parentNode.removeChild(this);
+    }
+  };
 }
 
 HTMLElement.prototype.offset = function() {

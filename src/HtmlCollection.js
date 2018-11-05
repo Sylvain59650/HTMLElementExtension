@@ -1,0 +1,3 @@
+HTMLCollection.prototype.asNodeList = function() {
+
+}

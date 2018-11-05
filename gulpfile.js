@@ -66,7 +66,11 @@ gulp.task("watch:htmlElement.min.js", function() {
 
 
 
-
+gulp.task("watch:demo", function() {
+  watch("src/**.js", function() {
+    gulp.run("demo");
+  })
+});
 
 gulp.task("default", ["htmlElement.min.js", "demo", "watch"]);
 
