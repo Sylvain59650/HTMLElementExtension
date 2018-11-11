@@ -27,6 +27,10 @@ HTMLElement.prototype.toggleClass = function(className) {
 }
 
 HTMLElement.prototype.class = function(classNames) {
+  if (classNames === "") {
+    this.attr("class", "");
+    return this;
+  }
   var classes = classNames.split(" ");
   for (var i = 0; i < classes.length; i++) {
     var cl = classes[i];
