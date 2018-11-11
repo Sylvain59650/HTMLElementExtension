@@ -24,8 +24,8 @@ NodeList.prototype.toggleClass = function(classNames) {
   return this;
 }
 
-NodeList.prototype.class = function(classNames) {
-  this.forEach((it) => it.class(classNames));
+NodeList.prototype.setClass = function(classNames) {
+  this.forEach((it) => it.setClass(classNames));
   return this;
 }
 

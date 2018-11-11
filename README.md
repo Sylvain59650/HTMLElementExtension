@@ -27,6 +27,7 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - attr
     - removeClass
     - toggleClass
+    - setClass
     - css
     - appendTo
     - outerHeight
@@ -97,6 +98,7 @@ The lastest version of this document is available on [Github > HTMLElementExtens
     - addClass
     - removeClass
     - toggleClass
+    - setClass
     - css
     - show
     - remove
