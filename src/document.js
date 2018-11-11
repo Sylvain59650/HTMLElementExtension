@@ -63,7 +63,8 @@ document.ajax = function(method, url, data, onSuccess, onError) {
 
 
 document.getScripts = function(arrScriptsUrl) {
-  for (var url of arrScriptsUrl) {
+  for (var i = 0; i < arrScriptsUrl.length; i++) {
+    var url = arrScriptsUrl[i];
     qs("body").beforeEnd(newElement("script", { src: url }));
   }
 }
@@ -75,7 +76,8 @@ document.getScriptsIf = function(condition, arrScriptsUrl) {
 }
 
 document.getStyles = function(arrStylessUrl, media = "all") {
-  for (var url of arrStylessUrl) {
+  for (var i = 0; i < arrStylessUrl.length; i++) {
+    var url = arrStylessUrl[i];
     qs("body").beforeEnd(newElement("link", { rel: "stylesheet", type: "text/css", href: url, media: media }));
   }
 }

@@ -26,7 +26,7 @@ HTMLElement.prototype.toggleClass = function(className) {
   }
 }
 
-HTMLElement.prototype.class = function(classNames) {
+HTMLElement.prototype.setClass = function(classNames) {
   if (classNames === "") {
     this.attr("class", "");
     return this;
