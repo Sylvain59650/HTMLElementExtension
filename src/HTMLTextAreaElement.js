@@ -21,7 +21,7 @@ HTMLTextAreaElement.prototype.insertAtCaret = function(text) {
 }
 
 HTMLTextAreaElement.prototype.val = function() {
-  if (arguments.length == 1) {
+  if (arguments.length === 1) {
     this.value = arguments[0];
   }
   return this.value;
@@ -42,7 +42,7 @@ HTMLTextAreaElement.prototype.setNoChanges = function() {
 HTMLTextAreaElement.prototype.isModified = function() {
     var id = this.name + "_old";
     var elem = qsi(id);
-    if (elem == null) { return false; }
+    if (elem === null) { return false; }
     return elem.innerHTML !== this.value;
   }
   // HTMLTextAreaElement.prototype.ml = function(nb) {
