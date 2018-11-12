@@ -1,0 +1,24 @@
+<html>
+
+<head>
+  <script src="../distrib/htmlElement.min.js"></script>
+</head>
+
+<body>
+  <div id="c1" class="container">
+    <span id="sp1" class="left">
+                          <div id="d1"></div>
+                          <div id="c2" class="container"></div>
+                  </span>
+  </div>
+
+
+  <script>
+    var id = qsi("d1").closest(".container").id; //c1
+    console.log(id);
+    id = qsi("d1").closest(".notfound");
+    console.log(id);
+  </script>
+</body>
+
+</html>

@@ -22,6 +22,9 @@
 The lastest version of this document is available on [Github > HTMLElementExtension](https://github.com/Sylvain59650/HTMLElementExtension/blob/master/README.md)
 </div>
 
+## Element
+    - closest
+
 ## HTMLElement
     - addClass
     - attr
