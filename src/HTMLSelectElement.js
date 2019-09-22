@@ -20,12 +20,12 @@ HTMLSelectElement.prototype.isModified = function() {
   return this.attr("old") !== this.val();
 }
 
-HTMLSelectElement.prototype.fill = function(data, keyName, valueName, linkData) {
+HTMLSelectElement.prototype.fill = function(data, keyName, textName, linkData) {
   this.options.length = 0;
   data.forEach(element => {
     var option = newElement("option");
-    option.text = element[keyName];
-    option.value = element[valueName];
+    option.value = element[keyName];
+	option.text = element[textName];    
     if (linkData) {
       option.data = element;
     }
@@ -33,10 +33,10 @@ HTMLSelectElement.prototype.fill = function(data, keyName, valueName, linkData) 
   });
 }
 
-HTMLSelectElement.prototype.load = function(url, keyName, valueName, linkData) {
+HTMLSelectElement.prototype.load = function(url, keyName, textName, linkData) {
   var ctx = this;
   document.getJSON(url, function(data) {
-    ctx.fill(data, keyName, valueName, linkData);
+    ctx.fill(data, keyName, textName, linkData);
   }, function() {
     ctx.options.length = 0;
   });
