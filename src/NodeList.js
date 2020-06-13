@@ -19,6 +19,12 @@ NodeList.prototype.removeClass = function(classNames) {
   return this;
 }
 
+NodeList.prototype.removeAttribute = function(attr) {
+  this.forEach((it) => it.removeAttribute(attr));
+  return this;
+}
+
+
 NodeList.prototype.toggleClass = function(classNames) {
   this.forEach((it) => it.toggleClass(classNames));
   return this;

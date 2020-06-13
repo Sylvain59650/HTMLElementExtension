@@ -15,6 +15,11 @@ HTMLFormElement.prototype.val = function() {
   return dic;
 }
 
+
+HTMLFormElement.prototype.serialize = function() {
+	return JSON.stringify(this.val());
+}
+
 HTMLFormElement.prototype.setInputs = function(obj, triggerChange = true) {
   var evt = new Event("change");
   for (var key in obj) {

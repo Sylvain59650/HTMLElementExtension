@@ -1,15 +1,30 @@
-HTMLSelectElement.prototype.val = function() {
-  if (!!this.value) {
-    return this.value;
-  }
-  var value = "";
-  for (var opt of this.selectedOptions) {
-    value += opt.value + ",";
-  }
-  if (value.length > 0) {
-    value = value.substring(0, value.length - 1);
-  }
-  return value;
+HTMLSelectElement.prototype.val = function () {
+    if (arguments.length == 0) {
+        if (!!this.value) {
+            return this.value;
+        }
+        var value = "";
+        for (var opt of this.selectedOptions) {
+            value += opt.value + ",";
+        }
+        if (value.length > 0) {
+            value = value.substring(0, value.length - 1);
+        }
+        return value;
+    }
+    else {
+        var found = false;
+        for (var i = 0; i < this.options.length; i++) {
+            if (this.options[i].value == arguments[0]) {
+                this.selectedIndex = i;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            this.selectedIndex = -1;
+        }
+    }
 }
 
 HTMLSelectElement.prototype.setNoChanges = function() {

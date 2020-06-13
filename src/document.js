@@ -9,6 +9,29 @@ document.ready = function(fn) {
 }
 
 
+document.SendJson = function (url, method, data, onSuccess, onError) {
+	var request = new XMLHttpRequest();
+	if (method.toLowerCase() === "get") {
+		console.error("could not send in get method");
+	}
+	let json = JSON.stringify(data);
+	request.open(method, url, true);
+	request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	request.onload = function () {
+		if (request.status >= 200 && request.status < 400) {
+			if (onSuccess) {
+				let output = JSON.parse(request.responseText);
+				onSuccess(output);
+			}
+		} else {
+			if (onError) {
+				onError(request);
+			}
+		}
+	}
+	request.send(json);
+}
+
 document.getJSON = function(url, onSuccess, onError, options) {
   var request = new XMLHttpRequest();
   if (isDef(options)) {
@@ -45,8 +68,8 @@ document.getJSON = function(url, onSuccess, onError, options) {
 
 document.ajax = function(method, url, data, onSuccess, onError) {
   var request = new XMLHttpRequest();
-  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-  request.open(method, url, true);
+ request.open(method, url, true); 
+ request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       if (onSuccess) {
@@ -81,3 +104,12 @@ document.getStyles = function(arrStylessUrl, media = "all") {
     qs("body").beforeEnd(newElement("link", { rel: "stylesheet", type: "text/css", href: url, media: media }));
   }
 }
+
+
+document.addStyleSheets=function(arrStylessUrl, media = "all") {
+  for (var i = 0; i < arrStylessUrl.length; i++) {
+    var url = arrStylessUrl[i];
+    qs("body").beforeEnd(newElement("link", { rel: "stylesheet", type: "text/css", href: url, media: media }));
+  }
+}
+
